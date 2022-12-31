@@ -1,0 +1,19 @@
+.smoothShown {
+  -webkit-transform: translateX(100%);
+  transform: translateX(100%);
+  transition: transform 300ms linear;
+}
+
+.smoothClosed {
+  -webkit-transform: none;
+  transform: none;
+  transition: transform 300ms linear;
+}
+.mainMenu,
+.themeMenu,
+.musicMenu {
+  flex-direction: column;
+}
+.fontAweIconSideMenu {
+  margin-right: 10px;
+}

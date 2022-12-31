@@ -1,0 +1,22 @@
+.loginSignupSection {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .adminLoginMenuWrapper {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    .adminLoginContent {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  .upperContent {
+    text-align: center;
+    width: 100%;
+  }
+}

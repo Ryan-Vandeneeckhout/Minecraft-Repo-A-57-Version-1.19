@@ -1,0 +1,64 @@
+/*Style Guide Content Measurements Begin */
+
+$fontLarge: 138px;
+$fontMedium: clamp(2rem, 1.4595rem + 2.7027vw, 4.5rem);
+$fontMedium2: 42px;
+$fontMedium3: 32px;
+$fontSmall: clamp(0.75rem, 0.6892rem + 0.2703vw, 0.8rem);
+$fontForm: 26px;
+
+$fontHeadingType: "Raleway", Arial, Helvetica, sans-serif;
+$fontHeadingTypeTwo: Beas Neue, Arial, Helvetica, sans-serif;
+$fontBodyType: "Raleway", Arial, Helvetica, sans-serif;
+
+h1 {
+  font-family: $fontHeadingType;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+h2 {
+  font-family: $fontHeadingTypeTwo;
+  text-transform: uppercase;
+}
+h3 {
+  font-family: $fontHeadingTypeTwo;
+  text-transform: uppercase;
+}
+h4 {
+  font-family: $fontHeadingTypeTwo;
+  text-transform: uppercase;
+}
+p,
+a,
+li,
+label,
+input,
+button {
+  font-family: $fontBodyType;
+  font-size: $fontSmall;
+}
+.fontAweIconLeftMargin {
+  margin-right: 15px;
+}
+a {
+  text-decoration: none;
+}
+.redText {
+  color: rgb(110, 5, 17);
+}
+.greenText {
+  color: green;
+}
+
+.redB {
+  background-color: rgb(110, 5, 17);
+}
+.yellowB {
+  background-color: goldenrod;
+}
+.greenB {
+  background-color: green;
+}
+.blueB {
+  background-color: rgb(5, 5, 49);
+}

@@ -1,0 +1,19 @@
+footer {
+  align-items: center;
+  background-color: var(--creditsColor);
+  bottom: 0;
+  color: white;
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  outline: solid 1px grey;
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.displayNone {
+  display: none;
+}
+.displayFlex {
+  display: flex;
+}

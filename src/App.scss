@@ -1,0 +1,96 @@
+.App {
+  min-height: 100vh;
+  min-width: 100vw;
+  height: 100vh;
+  width: 100vw;
+}
+
+html {
+  --backMainColor: black;
+  --backgroundImage: url("../public/assets/backgroundImages/cuteCats.webp");
+  --creditsColor: #0a0a0a;
+  --devIconBackgroundColor: #212121;
+  --displayFileEditorSectionColor: #212121;
+  --editorTextColor: white;
+  --navButton: #0a0a0a;
+  --navColor: #0a0a0a;
+  --navTextColor: white;
+  --mainMenuBackgroundColor: black;
+  --sideMenucolor: #212121;
+}
+html[data-theme="violet"] {
+  --creditsColor: rgb(60, 6, 69);
+  --displayFileEditorSectionColor: rgb(206, 162, 198);
+  --devIconBackgroundColor: purple;
+  --editorTextColor: white;
+  --navButton: rgb(60, 6, 69);
+  --navColor: white;
+  --navTextColor: black;
+  --mainMenuBackgroundColor: purple;
+  --sideMenucolor: rgb(206, 162, 198);
+}
+html[data-theme="indigo"] {
+  --creditsColor: rgb(74, 43, 122);
+  --displayFileEditorSectionColor: rgb(148, 85, 244);
+  --devIconBackgroundColor: rgb(85, 20, 85);
+  --editorTextColor: white;
+  --navButton: rgb(74, 43, 122);
+  --navColor: white;
+  --navTextColor: black;
+  --mainMenuBackgroundColor: rgb(85, 20, 85);
+  --sideMenucolor: rgb(148, 85, 244);
+}
+html[data-theme="blue"] {
+  --creditsColor: rgb(5, 5, 49);
+  --displayFileEditorSectionColor: #025ba0;
+  --devIconBackgroundColor: rgb(8, 8, 125);
+  --editorTextColor: white;
+  --navButton: rgb(5, 5, 49);
+  --navColor: white;
+  --navTextColor: black;
+  --mainMenuBackgroundColor: rgb(8, 8, 125);
+  --sideMenucolor: #006cbe;
+}
+html[data-theme="green"] {
+  --creditsColor: rgb(15, 39, 14);
+  --displayFileEditorSectionColor: rgb(77, 194, 71);
+  --devIconBackgroundColor: rgb(39, 123, 39);
+  --editorTextColor: white;
+  --navButton: rgb(15, 39, 14);
+  --navColor: white;
+  --navTextColor: black;
+  --mainMenuBackgroundColor: rgb(39, 123, 39);
+  --sideMenucolor: rgb(15, 39, 14);
+}
+html[data-theme="orange"] {
+  --creditsColor: rgb(150, 63, 17);
+  --displayFileEditorSectionColor: rgb(200, 84, 23);
+  --devIconBackgroundColor: rgb(255, 191, 72);
+  --editorTextColor: white;
+  --navButton: rgb(150, 63, 17);
+  --navColor: white;
+  --navTextColor: black;
+  --mainMenuBackgroundColor: rgb(255, 191, 72);
+  --sideMenucolor: orange;
+}
+html[data-theme="red"] {
+  --creditsColor: rgb(110, 5, 17);
+  --devIconBackgroundColor: rgb(220, 16, 16);
+  --displayFileEditorSectionColor: rgb(128, 6, 20);
+  --editorTextColor: white;
+  --navButton: rgb(110, 5, 17);
+  --navColor: white;
+  --navTextColor: black;
+  --mainMenuBackgroundColor: rgb(220, 16, 16);
+  --sideMenucolor: rgb(95, 8, 8);
+}
+html[data-theme="rainbow"] {
+  --creditsColor: #360b54;
+  --devIconBackgroundColor: rgb(128, 6, 20);
+  --displayFileEditorSectionColor: #e7e746;
+  --editorTextColor: white;
+  --navButton: darkgreen;
+  --navColor: white;
+  --navTextColor: black;
+  --mainMenuBackgroundColor: rgb(128, 6, 20);
+}

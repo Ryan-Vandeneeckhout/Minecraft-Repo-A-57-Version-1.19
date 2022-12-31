@@ -1,0 +1,153 @@
+main {
+  height: calc(100% - 100px);
+  width: 100%;
+
+  .wrapperMainContent {
+    @include FlexRow;
+    @include Maxsize100;
+
+    .sideMenu {
+      @include FlexColumnCenter;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+      width: 25vw;
+      max-width: 300px;
+      min-width: 250px;
+      position: fixed;
+      right: 0;
+      top: 60px;
+      bottom: 40px;
+      z-index: 99;
+      background-color: var(--sideMenucolor);
+      border-left: solid grey 1px;
+
+      button {
+        align-items: center;
+        border: none;
+        height: 60px;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+      }
+      button:hover {
+        background-color: slategray;
+        cursor: pointer;
+        color: white;
+      }
+
+      ul {
+        @include Maxsize100;
+        @include UlNormalize;
+
+        button {
+          border: none;
+          height: 60px;
+          outline: solid black 1px;
+          svg {
+            margin-left: 15px;
+          }
+        }
+        button:hover {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .displayFileEditorSection {
+      background-color: var(--displayFileEditorSectionColor);
+      border-right: solid grey 1px;
+      color: var(--editorTextColor);
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      width: 45%;
+      max-width: 800px;
+      outline: solid darkgray 1px;
+      overflow: hidden;
+      .orderEditorOne {
+        order: 1;
+      }
+      .orderEditorTwo {
+        order: 2;
+      }
+      .displayFileEditorWrapper {
+        @include Maxsize100;
+        display: flex;
+        flex-direction: column;
+        padding: 5%;
+
+        .textAreaContainer {
+          height: 50%;
+          width: 100%;
+
+          textarea {
+            border: solid goldenrod 3px;
+            width: 100%;
+            height: 90%;
+            min-height: 250px;
+            padding: 15px;
+          }
+        }
+      }
+    }
+    .mainBackgroundSection {
+      flex-grow: 1;
+      color: white;
+      background-color: var(--mainMenuBackgroundColor);
+      background-image: var(--backMainImage);
+      position: relative;
+
+      .wrapperAdminMenu {
+        @include Maxsize100;
+        @include FlexColumnCenter;
+        justify-content: center;
+        padding: 5%;
+      }
+
+      ul {
+        @include UlNormalize;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        bottom: 25%;
+        left: 0;
+        top: 10%;
+        position: absolute;
+
+        button {
+          border: none;
+          border-bottom: solid white 1px;
+          border-right: solid white 1px;
+          border-top: solid white 1px;
+          font-size: 20px;
+          height: 60px;
+          width: 60px;
+        }
+        button:hover {
+          cursor: pointer;
+        }
+      }
+      .mainBackgroundWrapper {
+        @include FlexColumnCenter;
+        @include Maxsize100;
+        justify-content: center;
+      }
+    }
+  }
+}
+.overlay {
+  background-color: transparent;
+  position: fixed;
+  left: 0;
+  top: 60px;
+  bottom: 40px;
+  right: 0;
+  z-index: 98;
+}
+.colorInput {
+  @include FlexColumn;
+
+  label {
+    margin-bottom: 10px;
+  }
+}

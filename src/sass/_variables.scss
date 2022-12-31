@@ -1,0 +1,141 @@
+/*Style Guide Content Measurements Begin */
+
+$fontLarge: 138px;
+$fontMedium: clamp(2rem, 1.4595rem + 2.7027vw, 4.5rem);
+$fontMedium2: 42px;
+$fontMedium3: 32px;
+$fontSmall: clamp(0.75rem, 0.6892rem + 0.2703vw, 0.8rem);
+$fontForm: 26px;
+
+$fontHeadingType: Raleway, Arial, Helvetica, sans-serif;
+$fontHeadingTypeTwo: Beas Neue, Arial, Helvetica, sans-serif;
+$fontBodyType: Raleway, Arial, Helvetica, sans-serif;
+
+@mixin Maxsize100 {
+  width: 100%;
+  height: 100%;
+}
+@mixin Maxsize50 {
+  width: 50%;
+  height: 50%;
+}
+
+@mixin Maxsize50x100 {
+  width: 50%;
+  height: 100%;
+}
+@mixin Maxsize100x50 {
+  width: 100%;
+  height: 50%;
+}
+@mixin PaddingMargin0 {
+  padding: 0;
+  margin: 0;
+}
+@mixin FlexRow {
+  display: flex;
+  flex-direction: row;
+}
+@mixin FlexRowCenter {
+  @include FlexRow;
+  align-items: center;
+}
+@mixin FlexColumnCenter {
+  @include FlexColumn;
+  align-items: center;
+}
+
+@mixin FlexColumn {
+  display: flex;
+  flex-direction: column;
+}
+@mixin TextAliginCenter {
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin FontSettingsParagraph {
+  font-family: $font-type-p;
+  font-size: 16px;
+}
+@mixin FontSettingsParagraph {
+  font-family: $font-type-p;
+  font-size: 18px;
+}
+@mixin TagListParagraph {
+  font-family: $font-type-p;
+  font-size: 20px;
+}
+
+@mixin SmallHeading {
+  font-family: "Raleway", Times New Roman, Times, serif;
+  font-size: 24px;
+}
+
+@mixin MediumHeading {
+  font-family: $font-type-h;
+  font-size: 28px;
+}
+
+@mixin LargeHeading {
+  font-family: $font-type-h;
+  font-size: 38px;
+}
+
+@mixin SectionHeading {
+  font-family: $font-type-h;
+  font-size: 24px;
+}
+@mixin TransparentText {
+  background-size: cover;
+  -moz-background-clip: text;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  color: transparent;
+}
+@mixin UlNormalize {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+@mixin ANormalize {
+  text-decoration: none;
+}
+@mixin wrapper5percent {
+  @include Maxsize100;
+  padding: 5%;
+}
+@mixin wrapper10percent {
+  @include Maxsize100;
+  padding: 10%;
+}
+@mixin ImageCover {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+@mixin ScrollBarHidden {
+  body {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+@mixin Hiddendisplay {
+  display: none;
+}
+@mixin Hiddenvisibility {
+  visibility: hidden;
+}
+@mixin visible {
+  visibility: visible;
+}
+@mixin show {
+  display: flex;
+}

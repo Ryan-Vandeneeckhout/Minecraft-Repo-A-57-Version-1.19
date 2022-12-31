@@ -1,0 +1,30 @@
+export const SideMenuMainMenuButtonMap = [
+    {
+        IconPicturePrefix: "fa-solid", 
+        IconPicture: "fa-building-columns", 
+        IconArrowPreFix: "fa-solid", 
+        IconArrow: "fa-arrow-right-from-bracket", 
+        ButtonText: "Theme Menu",
+        ThemeSetting: "true", 
+        MusicSetting: "false", 
+    }, 
+    {
+        IconPicturePrefix: "fa-solid", 
+        IconPicture: "fa-music", 
+        IconArrowPreFix: "fa-solid", 
+        IconArrow: "fa-arrow-right-from-bracket", 
+        ButtonText: "Music Menu",
+        MusicSetting: "true", 
+        ThemeSetting: "false", 
+    }, 
+    {
+        IconPicturePrefix: "fa-solid", 
+        IconPicture: "fa-building-columns", 
+        IconArrowPreFix: "fa-solid", 
+        IconArrow: "fa-arrow-right-from-bracket", 
+        ButtonText: "Sign In",
+        SignInSetting: "true", 
+        ThemeSetting: "false",
+        MusicSetting: "false", 
+}, 
+]

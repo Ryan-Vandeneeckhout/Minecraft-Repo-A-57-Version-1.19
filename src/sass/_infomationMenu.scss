@@ -1,0 +1,8 @@
+.infomationMenuSection {
+  @include Maxsize100;
+
+  .infomationMenuWrapper {
+    @include Maxsize100;
+    padding: 5% 10%;
+  }
+}

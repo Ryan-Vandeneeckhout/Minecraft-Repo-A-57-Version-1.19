@@ -1,0 +1,36 @@
+.appHeader {
+  background-color: var(--navColor);
+  color: var(--navTextColor);
+  display: flex;
+  flex-direction: row;
+  height: 60px;
+  outline: solid grey 1px;
+
+  nav {
+    @include FlexRowCenter;
+    @include Maxsize100;
+    justify-content: space-between;
+    padding: 0 5%;
+
+    ul {
+      @include UlNormalize;
+      @include Maxsize50x100;
+      @include FlexRowCenter;
+    }
+    .DevMenu {
+      button {
+        background-color: var(--navButton);
+        border: none;
+        border-radius: 90%;
+        color: white;
+        height: 45px;
+        transition: all 0.5s ease-in-out;
+        width: 45px;
+      }
+      button:hover {
+        background-color: var(--devIconBackgroundColor);
+        cursor: pointer;
+      }
+    }
+  }
+}

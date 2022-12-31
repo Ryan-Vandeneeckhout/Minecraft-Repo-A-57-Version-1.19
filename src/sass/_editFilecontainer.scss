@@ -1,0 +1,82 @@
+@mixin InputLabelEditFiles {
+  width: 100%;
+  cursor: pointer;
+  height: clamp(2.5rem, 1.8333rem + 2.963vw, 3.5rem);
+  padding: 15px;
+  justify-content: center;
+  outline: solid gray 1px;
+  text-align: center;
+}
+
+.editFileContainerSection {
+  height: 100%;
+  width: 200px;
+  outline: solid darkgray 1px;
+
+  .wrapperEditFile {
+    @include Maxsize100;
+    ul {
+      @include Maxsize100;
+      @include UlNormalize;
+
+      label {
+        @include InputLabelEditFiles;
+        align-items: center;
+        display: flex;
+        background-color: lightgrey;
+
+        svg {
+          margin-right: 10px;
+        }
+      }
+      label:hover {
+        background-color: rgb(171, 168, 168);
+        color: white;
+      }
+      .uploadFileLabel {
+        background-color: transparent;
+      }
+
+      input {
+        @include InputLabelEditFiles;
+        padding: 0 15px;
+      }
+      input:hover {
+        background-color: rgb(171, 168, 168);
+        color: white;
+      }
+      .downloadButton {
+        @include InputLabelEditFiles;
+        border-bottom: solid gray 1px;
+        color: white;
+        outline: none;
+        text-decoration: none;
+
+        svg {
+          margin-right: 5px;
+        }
+      }
+      .downloadButton:hover {
+        background-color: rgb(171, 168, 168);
+        color: black;
+      }
+
+      .redB {
+        background-color: rgb(110, 5, 17);
+        color: white;
+      }
+      .yellowB {
+        background-color: goldenrod;
+        color: black;
+      }
+      .greenB {
+        background-color: green;
+        color: white;
+      }
+      .blueB {
+        background-color: rgb(5, 5, 49);
+        color: white;
+      }
+    }
+  }
+}

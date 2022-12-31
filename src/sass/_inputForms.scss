@@ -1,0 +1,60 @@
+.textInputHaven {
+  @include FlexColumn;
+  margin-bottom: 20px;
+}
+.textInputEmailPasswordForm {
+  @include FlexColumn;
+
+  label {
+    margin-bottom: 10px;
+  }
+
+  .inputContainer {
+    max-width: 250px;
+    position: relative;
+    .inputShowHideText {
+      position: absolute;
+      top: 8px;
+      right: 16px;
+      z-index: 100;
+      color: red;
+    }
+  }
+
+  input {
+    background: #f2f8f4;
+    border: none;
+    border-radius: 15px;
+    color: black;
+    outline: 2px solid black;
+    padding: 8px;
+    width: 100%;
+  }
+
+  .errorForm {
+    outline: solid red 3px;
+    color: red;
+  }
+  .successForm {
+    outline: solid darkgreen 3px;
+    color: darkgreen;
+  }
+
+  button {
+    background: goldenrod;
+    border-radius: 15px;
+    border: none;
+    color: white;
+    font-size: 12px;
+    font-weight: bolder;
+    letter-spacing: 1.25px;
+    padding: 12px;
+    text-transform: uppercase;
+    max-width: 250px;
+  }
+
+  button:hover {
+    background-color: darkgreen;
+    cursor: pointer;
+  }
+}
