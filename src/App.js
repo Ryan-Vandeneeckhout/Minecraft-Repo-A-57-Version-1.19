@@ -49,7 +49,9 @@ function App() {
         devMenuFunction={devMenuFunction}
         devMenuVisible={devMenuVisible}
         DevMenuRef={DevMenuRef}
+        EditFileContainerRef={EditFileContainerRef}
         CreditsRef={CreditsRef}
+        sideMenuRef={sideMenuRef}
       />
       <Footer CreditsRef={CreditsRef} />
     </div>

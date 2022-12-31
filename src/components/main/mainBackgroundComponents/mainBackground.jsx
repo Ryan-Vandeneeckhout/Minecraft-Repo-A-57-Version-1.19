@@ -40,7 +40,8 @@ const MainBackground = (props) => {
     }
     if (menuSetting === "themeMenu") {
       return (
-        <ThemeMenuCreation CreditsRef={props.CreditsRef} DevMenuRef={props.DevMenuRef}/>
+        <ThemeMenuCreation EditFileContainerRef={props.EditFileContainerRef}
+        sideMenuRef={props.sideMenuRef} CreditsRef={props.CreditsRef} DevMenuRef={props.DevMenuRef}/>
       );
     } else {
       return (
