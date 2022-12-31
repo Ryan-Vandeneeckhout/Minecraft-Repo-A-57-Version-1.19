@@ -2,7 +2,7 @@ import useState from "react-usestateref";
 
 const ColorInput = (props) => {
   const [colorShow, setColorShow] = useState(`#ff0000`);
-  const [tagsarray, setTagsArray, tagValueRef] = useState([]);
+  const [tagsarray, setTagsArray] = useState([]);
   const handleUserInput = (e) => {
     props.StateRef.current.style.backgroundColor = `${e.target.value}`;
     setColorShow(`${e.target.value}`);
