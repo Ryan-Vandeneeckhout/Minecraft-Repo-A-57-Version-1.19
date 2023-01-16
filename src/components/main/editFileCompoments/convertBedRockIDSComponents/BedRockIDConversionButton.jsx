@@ -29,6 +29,7 @@ const BedRockIDConversionButton = (props) => {
     Object.keys(IndexKeyMineCraftNPC).forEach((key) => {
       str = str.replaceAll(key, IndexKeyMineCraftNPC[key]);
     });
+
     BedRockIDConversionButtonRef.current.classList.add("greenB");
     BedRockIDConversionButtonRef.current.classList.remove("redB", "yellowB");
     props.contentFileOutputConversionRef.current.value = str;

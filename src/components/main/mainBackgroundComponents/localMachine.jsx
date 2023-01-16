@@ -1,21 +1,15 @@
-import TextObjectInput from "../../inputs/TextObjectInput";
+import DataIdStringInput from "../../inputs/DataIdStringInput";
 
-const localMachine = () => {
-
-
-    return (
-        <section>
-            <div className="localMachineWrapper">
-                <div className="upperContent">
-                    <h3>Local Machine Menu</h3>
-                </div>
-                <div className="middleContent">
-                    <form>
-                        <TextObjectInput />
-                    </form>
-                </div>
-            </div>
-        </section>
-    )
-}
-export default localMachine;
+const LocalMachine = () => {
+  return (
+    <section className="infomationMenuSection">
+      <div className="infomationMenuWrapper">
+        <h3>Local Machine Menu</h3>
+        <div className="middleContent">
+          <DataIdStringInput />
+        </div>
+      </div>
+    </section>
+  );
+};
+export default LocalMachine;
