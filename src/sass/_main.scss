@@ -6,6 +6,11 @@ main {
     @include FlexRow;
     @include Maxsize100;
 
+    .mainContentMediaHolder {
+      @include FlexRow;
+      width: 50%;
+    }
+
     .sideMenu {
       @include FlexColumnCenter;
       -webkit-box-orient: vertical;
@@ -20,6 +25,7 @@ main {
       z-index: 99;
       background-color: var(--sideMenucolor);
       border-left: solid grey 1px;
+      border-top: solid grey 1px;
 
       button {
         align-items: center;
@@ -60,7 +66,7 @@ main {
       height: 100%;
       display: flex;
       flex-direction: column;
-      width: 45%;
+      width: 100%;
       max-width: 800px;
       outline: solid darkgray 1px;
       overflow: hidden;
@@ -72,8 +78,6 @@ main {
       }
       .displayFileEditorWrapper {
         @include Maxsize100;
-        display: flex;
-        flex-direction: column;
         padding: 5%;
 
         .textAreaContainer {
@@ -149,5 +153,29 @@ main {
 
   label {
     margin-bottom: 10px;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .App {
+overflow-x: hidden;
+    height: 200vh;
+
+  }
+  main {
+    .wrapperMainContent {
+      @include FlexColumn;
+
+      .mainContentMediaHolder {
+        width: 100%;
+      }
+
+      .displayFileEditorSection {
+        width: 75%;
+        max-width: 75%;
+      }
+      .editFileContainerSection {
+        width: 25%;
+      }
+    }
   }
 }

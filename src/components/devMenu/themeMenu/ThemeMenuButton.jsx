@@ -17,7 +17,11 @@ const ThemeMenuButton = (props) => {
     <button
       ref={ButtonRef}
       aria-label={props.ButtonText}
-      onClick={() => { htmlElement.setAttribute("data-theme", props.ThemeHTML); window.localStorage.setItem('dataTheme', (props.ThemeHTML)) }}
+      onClick={() => {
+        htmlElement.setAttribute("data-theme", props.ThemeHTML);
+        window.localStorage.setItem("dataTheme", props.ThemeHTML);
+        props.ResetTheme();
+      }}
       style={{ backgroundColor: props.ButtonColor, color: "white" }}
       onMouseEnter={ButtonEntered}
       onMouseLeave={ButtonLeft}

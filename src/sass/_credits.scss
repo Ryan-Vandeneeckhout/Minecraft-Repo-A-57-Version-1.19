@@ -10,6 +10,11 @@ footer {
   position: fixed;
   width: 100%;
   z-index: 100;
+
+  p {
+    text-align: center;
+    font-size: clamp(0.5rem, 0.3784rem + 0.5405vw, 1rem);
+  }
 }
 .displayNone {
   display: none;

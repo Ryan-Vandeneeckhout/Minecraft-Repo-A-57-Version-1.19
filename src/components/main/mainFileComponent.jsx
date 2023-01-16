@@ -8,9 +8,16 @@ const MainFileComponent = (props) => {
     <main>
       <div className="wrapperMainContent">
         <DisplayEditComponentsContainer />
-        <MainBackground DevMenuRef={props.DevMenuRef} CreditsRef={props.CreditsRef}  EditFileContainerRef={props.EditFileContainerRef}
-        sideMenuRef={props.sideMenuRef}/>
-        <SideMenu devMenuVisible={props.devMenuVisible} />
+        <MainBackground
+          DevMenuRef={props.DevMenuRef}
+          CreditsRef={props.CreditsRef}
+          EditFileContainerRef={props.EditFileContainerRef}
+          sideMenuRef={props.sideMenuRef}
+        />
+        <SideMenu
+          ResetTheme={props.ResetTheme}
+          devMenuVisible={props.devMenuVisible}
+        />
         <DevMenuOverlay
           devMenuFunction={props.devMenuFunction}
           devMenuVisible={props.devMenuVisible}

@@ -3,7 +3,11 @@ import ThemeMenuButton from "./ThemeMenuButton.jsx";
 
 const ThemeMenuChanger = (props) => {
   return (
-    <ul className={`themeMenu${props.themeMenuState ? "  displayFlex" : " displayNone"}`}>
+    <ul
+      className={`themeMenu${
+        props.themeMenuState ? "  displayFlex" : " displayNone"
+      }`}
+    >
       {ThemeMenuButtonMap.map((item, index) => {
         return (
           <ThemeMenuButton
@@ -11,6 +15,7 @@ const ThemeMenuChanger = (props) => {
             ButtonColor={item.ButtonColor}
             ButtonText={item.ButtonText}
             ThemeHTML={item.ThemeHTML}
+            ResetTheme={props.ResetTheme}
           />
         );
       })}

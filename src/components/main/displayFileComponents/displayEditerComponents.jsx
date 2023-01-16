@@ -9,6 +9,21 @@ const DisplayEditerComponents = (props) => {
     setOrderEditor((orderEditor) => !orderEditor);
   };
 
+  const errorContentOutput = () => {
+    if (props.errorContent === "");
+    else {
+      return (
+        <p>
+          <span className="redC">
+            Output conversion contains Ids that have may failed conversion
+            please check the following Ids
+          </span>{" "}
+          - {props.errorContent}
+        </p>
+      );
+    }
+  };
+
   return (
     <section className="displayFileEditorSection">
       <div className="displayFileEditorWrapper">
@@ -22,11 +37,13 @@ const DisplayEditerComponents = (props) => {
         </div>
         <div className={`${orderEditor ? "orderEditorTwo" : "orderEditorOne"}`}>
           <EditorTextAreaContainer
+            OutputError={props.OutputError}
             TextInputValue={"Preview Your Converted File Output Here..."}
             TextAreaInputRef={props.contentFileOutputConversionRef}
             TextAreaTitle={"File Output Preview:"}
           />
         </div>
+        {errorContentOutput()}
       </div>
     </section>
   );

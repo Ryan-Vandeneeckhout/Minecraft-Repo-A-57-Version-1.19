@@ -15,8 +15,9 @@ const EditFileContainer = (props) => {
   const [filename, setFileName] = useState("No File Specified");
   const [nameInput, setNameInput] = useState("Kitty_Shizz");
   const [dataBedRockOriginal, setDataBedRockOriginal] = useState(null);
-  const [, setDataConvertedStateHolder, dataConvertedStateHolderRef] =
-    useState(null);
+  const [, setDataConvertedStateHolder, dataConvertedStateHolderRef] = useState(
+    null
+  );
 
   function downloadFile() {
     const blob = new Blob([dataConvertedStateHolderRef.current], {
@@ -31,9 +32,7 @@ const EditFileContainer = (props) => {
         "download",
         filename.replace(".txt", "") + " Optimized Build.txt"
       );
-      console.log(downloadFileBedRockIDRef.current.attribute("download"))
-    }
-    else if (!filename.includes(".")) {
+    } else if (!filename.includes(".")) {
       downloadFileBedRockIDRef.current.setAttribute(
         "download",
         filename + " Optimized Build.txt"
@@ -62,8 +61,7 @@ const EditFileContainer = (props) => {
         "download",
         filename.replace(".txt", "") + " Optimized NPC Build.txt"
       );
-    }
-    else if (!filename.includes(".")) {
+    } else if (!filename.includes(".")) {
       downloadFileNPCCodeRef.current.setAttribute(
         "download",
         filename + " Optimized NPC Build.txt"
@@ -89,6 +87,7 @@ const EditFileContainer = (props) => {
             contentFileOutputConversionRef={
               props.contentFileOutputConversionRef
             }
+            setErrorContent={props.setErrorContent}
             downloadFile={downloadFile}
             setDataBedRockOriginal={setDataBedRockOriginal}
             setDataConvertedStateHolder={setDataConvertedStateHolder}

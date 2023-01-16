@@ -14,7 +14,9 @@ const SideMenu = (props) => {
         props.devMenuVisible ? " smoothClosed" : " smoothShown"
       }`}
     >
-      <ul className={`mainMenu${mainMenushow ? " displayFlex" : " displayNone"}`}>
+      <ul
+        className={`mainMenu${mainMenushow ? " displayFlex" : " displayNone"}`}
+      >
         <SideMenuMainMenu
           setMainMenu={setMainMenu}
           setThemeMenu={setThemeMenu}
@@ -23,7 +25,8 @@ const SideMenu = (props) => {
         />
       </ul>
 
-      <button className={`${mainMenushow ? " displayNone" : " displayFlex"}`}
+      <button
+        className={`${mainMenushow ? " displayNone" : " displayFlex"}`}
         onClick={() => {
           setMainMenu(true);
           setThemeMenu(false);
@@ -32,7 +35,12 @@ const SideMenu = (props) => {
       >
         Main Menu
       </button>
-      {themeMenuState && <ThemeMenuChanger themeMenuState={themeMenuState} />}
+      {themeMenuState && (
+        <ThemeMenuChanger
+          ResetTheme={props.ResetTheme}
+          themeMenuState={themeMenuState}
+        />
+      )}
     </section>
   );
 };

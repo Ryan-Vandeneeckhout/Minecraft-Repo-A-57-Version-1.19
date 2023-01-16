@@ -1,1 +1,3 @@
 export const CommandList = /ability|alwaysday|camerashake|changesetting|clear|clearspawnpoint|clone|connect|deop|dialogue|difficulty|effect|enchant|event|execute|fill|fog|function|gamemode|gamerule|gametest|give|help|kick|kill|list|locate|me|mobevent|music|op|ops|particle|playanimation|playsound|reload|replaceitem|ride|save|say|schedule|scoreboard|setblock|setmaxplayers|setworldspawn|spawnpoint|spreadplayers|stop|stopsound|structure|summon|tag|teleport|tellraw|testfor|testforblock|testforblocks|tickingarea|time|title|titleraw|toggledownfall|tp|w|wb|weather|xp/;
+
+// NPC commandlist in Regex to add a new command - |new command - if adding a new command the end of the list make sure to add / at the end of the command |new command/;
