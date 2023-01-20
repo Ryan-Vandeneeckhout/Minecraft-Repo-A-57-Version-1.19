@@ -1,6 +1,6 @@
 import DataIdStringInput from "../../inputs/DataIdStringInput";
 
-const LocalMachine = () => {
+const LocalMachineFile = () => {
   return (
     <section className="infomationMenuSection">
       <div className="infomationMenuWrapper">
@@ -12,4 +12,4 @@ const LocalMachine = () => {
     </section>
   );
 };
-export default LocalMachine;
+export default LocalMachineFile;

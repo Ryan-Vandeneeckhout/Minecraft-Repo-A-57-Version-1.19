@@ -3,7 +3,8 @@ import { useState } from "react";
 import { useCollection } from "../../firebase/useFirestoreDatabase.js";
 import LoginPage from "../LoginPage.jsx";
 import InfomationMenu from "./infomationMenu.jsx";
-import LocalMachine from "./LocalMachine.jsx";
+import LocalMachineFile from "./LocalMachineFile.jsx";
+
 import { ButtonMapMainBackground } from "./menuComponents/menuComponentButtonMaps/buttonMapMainBackground.jsx";
 import ThemeMenuCreation from "./themeMenuCreation.jsx";
 
@@ -33,7 +34,7 @@ const MainBackground = (props) => {
       );
     }
     if (menuSetting === "localMenu") {
-      return <LocalMachine />;
+      return <LocalMachineFile />;
     }
     if (menuSetting === "themeMenu") {
       return (
