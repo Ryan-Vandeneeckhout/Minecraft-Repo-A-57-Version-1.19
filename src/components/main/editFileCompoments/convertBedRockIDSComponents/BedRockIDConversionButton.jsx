@@ -64,9 +64,8 @@ const BedRockIDConversionButton = (props) => {
       }
     });
 
-    if (matches === [] || matches === null || matches.length === 0) {
-      alert("sucess");
-    } else {
+    if (matches === [] || matches === null || matches.length === 0);
+    else {
       let uniqueChars = [...new Set(matches)];
       setFailedIds([uniqueChars.toString().replaceAll("\\", "")]);
       props.setErrorContent(`${failedIdsRef.current}`);
