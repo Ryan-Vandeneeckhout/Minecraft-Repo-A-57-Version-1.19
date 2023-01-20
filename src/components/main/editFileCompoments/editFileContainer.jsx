@@ -87,6 +87,7 @@ const EditFileContainer = (props) => {
             contentFileOutputConversionRef={
               props.contentFileOutputConversionRef
             }
+            closeWindow={props.closeWindow}
             setErrorContent={props.setErrorContent}
             downloadFile={downloadFile}
             setDataBedRockOriginal={setDataBedRockOriginal}

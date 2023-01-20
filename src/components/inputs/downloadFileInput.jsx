@@ -6,7 +6,7 @@ const DownloadFileInput = (props) => {
       <a
         href="defaultURL"
         ref={props.downloadFileRef}
-        className="downloadButton blueB DisplayNone"
+        className="downloadButton blueB DisplayNone hoverYes"
       >
         {" "}
         <span>

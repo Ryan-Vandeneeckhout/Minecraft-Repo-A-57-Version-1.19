@@ -1,0 +1,30 @@
+.errorContentIdsFoundUnconverted {
+    position: fixed;
+    height: 200px;
+    width: 500px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    outline: solid black 5px;
+
+    .errorContentIdsFoundUnconvertedWrapper {
+        padding: 15px;
+        position: relative;
+        text-align: center;
+        @include Maxsize100;
+
+        button {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border: none;
+            outline: solid 2px black;
+        }
+        button:hover {
+            background-color: darkgrey;
+            color: white;
+        }
+    }
+}

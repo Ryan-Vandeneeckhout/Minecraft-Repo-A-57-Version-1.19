@@ -1,20 +1,24 @@
 import { useRef } from "react";
 import useState from "react-usestateref";
 import { db } from "../../../firebase/config.js";
-import { collection, addDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
+import { useCollection } from "../../../firebase/useFirestoreDatabase.js";
 
 import { IndexKeyMineCraftNPC } from "./IndexKeyMinecraftNPC";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const BedRockIDConversionButton = (props) => {
   const BedRockIDConversionButtonRef = useRef(null);
+  const { databaseFirestore } = useCollection("MissingIds");
   const [, setFailedIds, failedIdsRef] = useState("");
+  const [, setTagValue, tagValueRef] = useState([]);
+  const [, setIdValue, IdValueRef] = useState([]);
 
-  const handleSubmit = async () => {
+  const FireBaseIDs = async () => {
     //Add ID Failed to Firestore
 
-    await addDoc(collection(db, `MissingValues`), {
-      IdCollection: failedIdsRef.current,
+    await setDoc(doc(db, `MissingIds`, `IDS`), {
+      IdCollection: IdValueRef.current,
     });
   };
 
@@ -44,22 +48,37 @@ const BedRockIDConversionButton = (props) => {
       if (x.match(rx) === null);
       else {
         matches = [...x.match(rx)];
+        setTagValue([...new Set(matches)]);
+        if (databaseFirestore[0].IdCollection === (undefined || null)) {
+          return;
+        } else {
+          setIdValue(databaseFirestore[0].IdCollection);
+          tagValueRef.current.forEach((i) => {
+            if (!databaseFirestore[0].IdCollection.includes(i)) {
+              setIdValue([...IdValueRef.current, i]);
+            } else {
+              return;
+            }
+          });
+        }
       }
     });
 
-    if (matches === [] || matches === null);
-    else {
+    if (matches === [] || matches === null || matches.length === 0) {
+      alert("sucess");
+    } else {
       let uniqueChars = [...new Set(matches)];
-      setFailedIds(uniqueChars.toString().replaceAll("\\", ""));
+      setFailedIds([uniqueChars.toString().replaceAll("\\", "")]);
       props.setErrorContent(`${failedIdsRef.current}`);
+      props.closeWindow(true);
+      FireBaseIDs();
     }
-    handleSubmit();
   };
 
   return (
     <label
       ref={BedRockIDConversionButtonRef}
-      className="buttonOne yellowB"
+      className="buttonOne yellowB hoverYes"
       onClick={FileTest}
     >
       <FontAwesomeIcon className="fontAweIcon" icon="fa-exchange" />

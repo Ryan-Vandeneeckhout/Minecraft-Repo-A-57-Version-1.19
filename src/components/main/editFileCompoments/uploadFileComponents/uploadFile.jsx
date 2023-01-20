@@ -50,7 +50,7 @@ const UploadFile = (props) => {
   return (
     <>
       <label
-        className="uploadFileLabel yellowB"
+        className="uploadFileLabel yellowB hoverYes"
         htmlFor="files"
         ref={inputButton}
       >
@@ -64,7 +64,7 @@ const UploadFile = (props) => {
         onChange={getFile}
         ref={inputFileRef}
       />
-      <label className="fileInputSelectedOutputText">
+      <label className="fileInputSelectedOutputText hoverYes">
         {inputSuccess ? (
           <p>File Selected - {inputFileRef.current.value.split("\\").pop()}</p>
         ) : (

@@ -3,13 +3,13 @@ import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
 //Firestore Config File for Project Endless
 const firebaseConfig = {
-  apiKey: "AIzaSyDakKMmhLHs2fqN-d2C0zSshqJasvnh5RY",
-  authDomain: "minecraftnpc.firebaseapp.com",
-  projectId: "minecraftnpc",
-  storageBucket: "minecraftnpc.appspot.com",
-  messagingSenderId: "315756692269",
-  appId: "1:315756692269:web:c85895c8af904e89e649a4",
-  measurementId: "G-0BTC71ZDTK"
+  apiKey: "AIzaSyD48d2iis9NGn4yfWv_iDEbaxbhec8PGn0",
+  authDomain: "minecraft-firestore.firebaseapp.com",
+  projectId: "minecraft-firestore",
+  storageBucket: "minecraft-firestore.appspot.com",
+  messagingSenderId: "410570738947",
+  appId: "1:410570738947:web:a593000a25c383f8606d36",
+  measurementId: "G-496BYTSF3L",
 };
 
 initializeApp(firebaseConfig);

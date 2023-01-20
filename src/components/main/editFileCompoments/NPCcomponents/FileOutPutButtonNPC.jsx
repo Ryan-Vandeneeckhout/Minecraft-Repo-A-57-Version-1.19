@@ -3,8 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CommandList } from "./CommandList";
 
 const FileOutPutButtonNPC = (props) => {
-
-  const buttonNPCRef = useRef(null); 
+  const buttonNPCRef = useRef(null);
   const FileOutputNPCLogic = () => {
     let NameBuilder = props.nameInput.replaceAll(" ", "_");
     if (props.contentOutputTargetRef.current.value === undefined) {
@@ -86,7 +85,11 @@ const FileOutPutButtonNPC = (props) => {
     });
   }
   return (
-    <label onClick={FileOutputNPCLogic} ref={buttonNPCRef} className="buttonOne yellowB">
+    <label
+      onClick={FileOutputNPCLogic}
+      ref={buttonNPCRef}
+      className="buttonOne hoverYes yellowB"
+    >
       <FontAwesomeIcon className="fontAweIcon" icon="fa-exchange" />
       Convert File to NPC
     </label>

@@ -1,24 +1,23 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 
 import DisplayEditerComponents from "./displayFileComponents/displayEditerComponents";
 import EditFileContainer from "./editFileCompoments/editFileContainer";
 
-const DisplayEditComponentsContainer = () => {
+const DisplayEditComponentsContainer = (props) => {
   const contentFileUploadedPreviewRef = useRef(null);
   const contentFileOutputConversionRef = useRef(null);
-  const [errorContent, setErrorContent] = useState("");
 
   return (
     <div className="mainContentMediaHolder">
       <EditFileContainer
         contentFileUploadedPreviewRef={contentFileUploadedPreviewRef}
         contentFileOutputConversionRef={contentFileOutputConversionRef}
-        setErrorContent={setErrorContent}
+        setErrorContent={props.setErrorContent}
+        closeWindow={props.closeWindow}
       />
       <DisplayEditerComponents
         contentFileUploadedPreviewRef={contentFileUploadedPreviewRef}
         contentFileOutputConversionRef={contentFileOutputConversionRef}
-        errorContent={errorContent}
       />
     </div>
   );

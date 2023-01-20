@@ -15,6 +15,7 @@ export default function NPCInput(props) {
         value={props.valueInput}
         min={120}
         max={1000}
+        className="hoverYes"
       />
     </div>
   );

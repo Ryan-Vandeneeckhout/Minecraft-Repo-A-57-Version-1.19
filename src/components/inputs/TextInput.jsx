@@ -11,6 +11,7 @@ const TextInput = (props) => {
         type="text"
         value={props.nameInput}
         onChange={handleUserInput}
+        className="hoverYes"
       />
     </>
   );

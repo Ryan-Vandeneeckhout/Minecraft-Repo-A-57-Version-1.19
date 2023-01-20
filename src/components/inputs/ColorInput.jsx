@@ -1,14 +1,18 @@
 import useState from "react-usestateref";
 
 const ColorInput = (props) => {
-  const [colorShow, setColorShow] = useState(`#ff0000`);
-  const [tagsarray, setTagsArray] = useState([]);
+  const [colorShow, setColorShow, colorShowRef] = useState(`#ff0000`);
   const handleUserInput = (e) => {
     props.StateRef.current.style.backgroundColor = `${e.target.value}`;
     setColorShow(`${e.target.value}`);
+  };
 
-    setTagsArray((tagsarray) => [...tagsarray, { poop: "not poop" }]);
-    console.log(tagsarray);
+  const handleUserKeyUp = (e) => {
+    props.setTagsArray([
+      ...props.tagsarray,
+      { colorItem: colorShowRef.current },
+    ]);
+    console.log(props.tagsarray);
   };
   return (
     <div className="colorInput">
@@ -19,6 +23,7 @@ const ColorInput = (props) => {
         name="favcolor"
         value={colorShow}
         onChange={handleUserInput}
+        onClick={handleUserKeyUp}
       ></input>
     </div>
   );
