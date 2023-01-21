@@ -14,6 +14,8 @@ const DisplayEditComponentsContainer = (props) => {
         contentFileOutputConversionRef={contentFileOutputConversionRef}
         setErrorContent={props.setErrorContent}
         closeWindow={props.closeWindow}
+        setFailedIdsDownload={props.setFailedIdsDownload}
+        downloadFileFailedIDs={props.downloadFileFailedIDs}
       />
       <DisplayEditerComponents
         contentFileUploadedPreviewRef={contentFileUploadedPreviewRef}

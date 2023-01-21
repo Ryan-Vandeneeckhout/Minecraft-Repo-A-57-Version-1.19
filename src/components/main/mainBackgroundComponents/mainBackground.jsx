@@ -1,14 +1,17 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
+import { useAuthContext } from "../../firebase/useAuthContext.js";
 import { useCollection } from "../../firebase/useFirestoreDatabase.js";
 import LoginPage from "../LoginPage.jsx";
 import InfomationMenu from "./infomationMenu.jsx";
 import LocalMachineFile from "./LocalMachineFile.jsx";
 
 import { ButtonMapMainBackground } from "./menuComponents/menuComponentButtonMaps/buttonMapMainBackground.jsx";
+import SignedInAdminMenu from "./signedInAdminMenu.jsx";
 import ThemeMenuCreation from "./themeMenuCreation.jsx";
 
 const MainBackground = (props) => {
+  const { user, authIsReady } = useAuthContext();
   const { databaseFirestore } = useCollection("npcTestConnection");
   const [menuSetting, setMenuSetting] = useState("defaultMenu");
 
@@ -29,7 +32,7 @@ const MainBackground = (props) => {
       return (
         <div className="wrapperAdminMenu">
           <h2>Adminstator Menu for Site and Global Settings</h2>
-          <LoginPage />
+          {authIsReady && (user ? <SignedInAdminMenu /> : <LoginPage />)}
         </div>
       );
     }

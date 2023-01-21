@@ -87,11 +87,13 @@ const EditFileContainer = (props) => {
             contentFileOutputConversionRef={
               props.contentFileOutputConversionRef
             }
+            downloadFileFailedIDs={props.downloadFileFailedIDs}
             closeWindow={props.closeWindow}
             setErrorContent={props.setErrorContent}
             downloadFile={downloadFile}
             setDataBedRockOriginal={setDataBedRockOriginal}
             setDataConvertedStateHolder={setDataConvertedStateHolder}
+            setFailedIdsDownload={props.setFailedIdsDownload}
           />
           <TextInput
             nameInput={filename}

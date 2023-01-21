@@ -69,6 +69,11 @@ const BedRockIDConversionButton = (props) => {
       let uniqueChars = [...new Set(matches)];
       setFailedIds([uniqueChars.toString().replaceAll("\\", "")]);
       props.setErrorContent(`${failedIdsRef.current}`);
+      props.setFailedIdsDownload(
+        "Kitty_Shizz here. I am sorry about meeting like this, \nit appears that there are the following unconverted IDs\n in your build. Please download your file from the\n Download BedRock Id Conversion button\n and remove the IDs from your file and upload \nthe file once again to continue the conversion. I am working to collect all\n the IDs but I may have missed all the possible\n combinations for written objects.\n FAILED ID LIST:\n" +
+          [uniqueChars.toString().replaceAll("\\", "")]
+      );
+      props.downloadFileFailedIDs();
       props.closeWindow(true);
       FireBaseIDs();
     }

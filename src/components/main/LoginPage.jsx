@@ -21,7 +21,7 @@ const LoginPage = () => {
           <div className="upperContent">
             <h2>Welcome Back Administrator</h2>
             <p>Log in to continue.</p>
-            <p>{success}</p>
+            <p>{success ? <span>Success</span> : null}</p>
             {error ? <p>{errorText}</p> : null}
           </div>
 
