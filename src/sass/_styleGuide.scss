@@ -43,6 +43,27 @@ button {
 a {
   text-decoration: none;
 }
+.downloadIDsContainer {
+  @include FlexColumnCenter; 
+  button {
+    background-color: goldenrod;
+    border: none;
+    padding: 5px;
+  }
+}
+.downloadButtonAdmin {
+  margin-top: 20px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: white;
+}
+.downloadButtonAdmin:hover {
+  color: goldenrod;
+  cursor: pointer;
+}
+.marginRightClass {
+  margin-left: 10px;
+}
 .redText {
   color: rgb(110, 5, 17);
 }
