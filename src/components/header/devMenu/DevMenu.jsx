@@ -1,6 +1,13 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 
 const DevMenu = (props) => {
+  const [hoverOpen, setHoverOpen] = useState(false);
+
+  const setHoverState = () => {
+    setHoverOpen((hoverOpen) => !hoverOpen);
+  };
+
   return (
     <div className="DevMenu">
       <button
@@ -10,10 +17,18 @@ const DevMenu = (props) => {
         className={`Dev-Menu-button${
           props.devMenuVisible ? " rotating" : " not"
         }`}
+        onMouseEnter={setHoverState}
+        onMouseLeave={setHoverState}
       >
-        <FontAwesomeIcon
-          icon={`${props.devMenuVisible ? "fa-times" : "fa-bars"}`}
-        />
+        {props.devMenuVisible ? (
+          <FontAwesomeIcon
+            icon={`${hoverOpen ? "fa-angle-right" : "fa-times"}`}
+          />
+        ) : (
+          <FontAwesomeIcon
+            icon={`${hoverOpen ? "fa-angle-left" : "fa-bars"}`}
+          />
+        )}
       </button>
     </div>
   );

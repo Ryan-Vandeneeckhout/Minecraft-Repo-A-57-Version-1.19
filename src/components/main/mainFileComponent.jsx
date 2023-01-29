@@ -8,6 +8,9 @@ import MainBackground from "./mainBackgroundComponents/mainBackground";
 const MainFileComponent = (props) => {
   const [closeWindow, setCloseWindow] = useState(false);
   const [errorContent, setErrorContent] = useState("");
+  const [loading, setLoading] = useState(
+    "Get Started Converting a MineCraft Build"
+  );
   const [, setFailedIdsDownload, failedIdsDownloadRef] = useState("");
   const IdDownloadRef = useRef(null);
 
@@ -33,12 +36,15 @@ const MainFileComponent = (props) => {
           closeWindow={setCloseWindow}
           setFailedIdsDownload={setFailedIdsDownload}
           downloadFileFailedIDs={downloadFileFailedIDs}
+          loading={loading}
+          setLoading={setLoading}
         />
         <MainBackground
           DevMenuRef={props.DevMenuRef}
           CreditsRef={props.CreditsRef}
           EditFileContainerRef={props.EditFileContainerRef}
           sideMenuRef={props.sideMenuRef}
+          loading={loading}
         />
         <SideMenu
           ResetTheme={props.ResetTheme}

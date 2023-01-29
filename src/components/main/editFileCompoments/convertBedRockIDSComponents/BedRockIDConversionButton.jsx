@@ -38,6 +38,15 @@ const BedRockIDConversionButton = (props) => {
 
     Object.keys(IndexKeyMineCraftNPC).forEach((key) => {
       str = str.replaceAll(key, IndexKeyMineCraftNPC[key]);
+      props.setLoading(
+        "Conversion at " +
+          Math.ceil(
+            100 *
+              (Object.keys(IndexKeyMineCraftNPC).indexOf(key) /
+                Object.keys(IndexKeyMineCraftNPC).length)
+          ) +
+          "%"
+      );
     });
 
     BedRockIDConversionButtonRef.current.classList.add("greenB");

@@ -94,6 +94,8 @@ const EditFileContainer = (props) => {
             setDataBedRockOriginal={setDataBedRockOriginal}
             setDataConvertedStateHolder={setDataConvertedStateHolder}
             setFailedIdsDownload={props.setFailedIdsDownload}
+            loading={props.loading}
+            setLoading={props.setLoading}
           />
           <TextInput
             nameInput={filename}

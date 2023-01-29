@@ -53,6 +53,7 @@ const MainBackground = (props) => {
         <div className="mainBackgroundWrapper">
           <h1>Minecraft NPC Convertor Version 2</h1>
           <h2>NPC Database Status: {renderFireBaseDatabase()}</h2>
+          <h3>{props.loading}</h3>
         </div>
       );
     }
