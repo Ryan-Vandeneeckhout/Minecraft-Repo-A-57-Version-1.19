@@ -30,6 +30,12 @@ const BedRockIDConversionButton = (props) => {
     BedRockIDConversionButtonRef.current.classList.remove("greenB", "redB");
 
     let str = props.contentFileUploadedPreviewRef.current.value;
+
+    if (str.includes("ReBrainer")) {
+      str = str.replaceAll(/#.*?\)/g, "");
+      for (let i = 0; i < 3; i++) str = str.substring(str.indexOf("\n") + 1);
+    }
+
     Object.keys(IndexKeyMineCraftNPC).forEach((key) => {
       str = str.replaceAll(key, IndexKeyMineCraftNPC[key]);
     });

@@ -15,6 +15,7 @@
 
   .wrapperEditFile {
     @include Maxsize100;
+    background-color: var(--sideBarColor);
     ul {
       @include Maxsize100;
       @include UlNormalize;

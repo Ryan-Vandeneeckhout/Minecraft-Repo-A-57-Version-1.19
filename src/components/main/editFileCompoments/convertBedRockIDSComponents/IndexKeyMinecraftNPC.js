@@ -1,4 +1,7 @@
 export const IndexKeyMineCraftNPC = {
+  "[type=ArmorStand,name=STRCMD]": "air",
+  'structure_block ["structure_block_type": "load"]': "air",
+  'structure_block ["structure_block_type":"save"]': "air",
   '["brewing_stand_slot_a_bit":true,"brewing_stand_slot_b_bit":true,"brewing_stand_slot_c_bit":true]':
     "0",
   '["covered_bit":true,"height":0]': "0",
