@@ -5,20 +5,31 @@ footer {
   color: white;
   display: flex;
   height: 40px;
-  justify-content: center;
   outline: solid 1px grey;
+  padding: 0 5%;
   position: fixed;
   width: 100%;
   z-index: 100;
 
   p {
-    text-align: center;
     font-size: clamp(0.5rem, 0.3784rem + 0.5405vw, 1rem);
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    span:nth-child(1) {
+      margin-left: auto;
+    }
+    span:nth-child(2) {
+      margin-left: auto;
+    }
   }
 }
+
 .displayNone {
   display: none;
 }
+
 .displayFlex {
   display: flex;
 }

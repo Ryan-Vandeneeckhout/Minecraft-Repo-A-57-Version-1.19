@@ -24,7 +24,11 @@
         @include InputLabelEditFiles;
         align-items: center;
         display: flex;
-        background-color: lightgrey;
+        color: white;
+        background-color: var(--labelBackgroundColor);
+        text-transform: capitalize;
+        font-weight: 600;
+        letter-spacing: 1px;
 
         svg {
           margin-right: 10px;
@@ -41,6 +45,7 @@
       input {
         @include InputLabelEditFiles;
         padding: 0 15px;
+        text-transform: capitalize;
       }
       input:hover {
         background-color: rgb(171, 168, 168);

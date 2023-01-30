@@ -1,10 +1,9 @@
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const UploadFile = (props) => {
   const inputFileRef = useRef(null);
   const inputButton = useRef(null);
-  const [inputSuccess, setInputSuccess] = useState(false);
 
   function getFile() {
     if (inputFileRef.current === null);
@@ -17,7 +16,6 @@ const UploadFile = (props) => {
           props.contentFileUploadedPreviewRef.current,
           inputFileRef.current.files[0]
         );
-        setInputSuccess(true);
         props.setFileName(inputFileRef.current.value.split("\\").pop());
         inputButton.current.classList.add("yellowB");
         inputButton.current.classList.remove("redB", "greenB");
@@ -64,13 +62,6 @@ const UploadFile = (props) => {
         onChange={getFile}
         ref={inputFileRef}
       />
-      <label className="fileInputSelectedOutputText hoverYes">
-        {inputSuccess ? (
-          <p>File Selected - {inputFileRef.current.value.split("\\").pop()}</p>
-        ) : (
-          <p>No File Selected</p>
-        )}
-      </label>
     </>
   );
 };

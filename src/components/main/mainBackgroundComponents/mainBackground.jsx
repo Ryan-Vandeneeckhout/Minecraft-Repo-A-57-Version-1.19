@@ -1,27 +1,16 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useAuthContext } from "../../firebase/useAuthContext.js";
-import { useCollection } from "../../firebase/useFirestoreDatabase.js";
+import ProgressBarWidth from "../../inputs/ProgressBarWidth.jsx";
 import LoginPage from "../LoginPage.jsx";
 import InfomationMenu from "./infomationMenu.jsx";
 import LocalMachineFile from "./LocalMachineFile.jsx";
 
-import { ButtonMapMainBackground } from "./menuComponents/menuComponentButtonMaps/buttonMapMainBackground.jsx";
 import SignedInAdminMenu from "./signedInAdminMenu.jsx";
 import ThemeMenuCreation from "./themeMenuCreation.jsx";
 
 const MainBackground = (props) => {
   const { user, authIsReady } = useAuthContext();
-  const { databaseFirestore } = useCollection("npcTestConnection");
-  const [menuSetting, setMenuSetting] = useState("defaultMenu");
-
-  const renderFireBaseDatabase = () => {
-    return databaseFirestore ? (
-      <span className="greenText">{databaseFirestore[0].testConnection}</span>
-    ) : (
-      <span className="redText">Not Connected</span>
-    );
-  };
+  const [menuSetting] = useState("defaultMenu");
 
   const renderMenuSetting = () => {
     if (menuSetting === "infomationMenu") {
@@ -51,8 +40,11 @@ const MainBackground = (props) => {
     } else {
       return (
         <div className="mainBackgroundWrapper">
-          <h1>Minecraft NPC Convertor Version 2</h1>
-          <h2>NPC Database Status: {renderFireBaseDatabase()}</h2>
+          <h1>Status: {props.progressStatusRef.current}</h1>
+          <ProgressBarWidth
+            widthGrey={props.greyWidthRef.current}
+            widthGreen={props.greenWidthRef.current}
+          />
           <h3>{props.loading}</h3>
         </div>
       );
@@ -60,22 +52,7 @@ const MainBackground = (props) => {
   };
 
   return (
-    <section className="mainBackgroundSection">
-      <ul>
-        {ButtonMapMainBackground.map((item, index) => {
-          return (
-            <button
-              onClick={() => setMenuSetting(item.ButtonValue)}
-              key={index}
-              style={{ backgroundColor: item.ButtonColor, color: "white" }}
-            >
-              <FontAwesomeIcon icon={item.ButtonText} />
-            </button>
-          );
-        })}
-      </ul>
-      {renderMenuSetting()}
-    </section>
+    <section className="mainBackgroundSection">{renderMenuSetting()}</section>
   );
 };
 export default MainBackground;

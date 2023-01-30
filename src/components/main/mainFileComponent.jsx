@@ -12,6 +12,9 @@ const MainFileComponent = (props) => {
     "Get Started Converting a MineCraft Build"
   );
   const [, setFailedIdsDownload, failedIdsDownloadRef] = useState("");
+  const [, setGreenWidth, greenWidthRef] = useState(1);
+  const [, setGreyWidth, greyWidthRef] = useState(99);
+  const [, setProgessStatus, progressStatusRef] = useState("Idle");
   const IdDownloadRef = useRef(null);
 
   const closeWindowFunction = () => {
@@ -38,6 +41,9 @@ const MainFileComponent = (props) => {
           downloadFileFailedIDs={downloadFileFailedIDs}
           loading={loading}
           setLoading={setLoading}
+          setGreyWidth={setGreyWidth}
+          setProgessStatus={setProgessStatus}
+          setGreenWidth={setGreenWidth}
         />
         <MainBackground
           DevMenuRef={props.DevMenuRef}
@@ -45,6 +51,9 @@ const MainFileComponent = (props) => {
           EditFileContainerRef={props.EditFileContainerRef}
           sideMenuRef={props.sideMenuRef}
           loading={loading}
+          greenWidthRef={greenWidthRef}
+          greyWidthRef={greyWidthRef}
+          progressStatusRef={progressStatusRef}
         />
         <SideMenu
           ResetTheme={props.ResetTheme}

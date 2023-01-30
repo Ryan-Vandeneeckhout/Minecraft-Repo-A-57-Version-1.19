@@ -4,9 +4,24 @@
   height: 100vh;
   overflow: hidden;
 }
-
-html {
+html{
+  --backMainColor: #1e2124;
+  --creditsColor: #1e2124;
+  --labelBackgroundColor: "transparent";
+  --devIconBackgroundColor: #212121;
+  --displayFileEditorSectionColor: #282b30;
+  --editorTextColor: white;
+  --navButton: #1e2124;
+  --navColor: #1e2124;
+  --navTextColor: white;
+  --mainMenuBackgroundColor: #1e2124;
+  --sideMenucolor: #424549;
+  --sideBarColor: #424549;
+  --greenText: green;
+}
+html[data-theme="black"] {
   --backMainColor: black;
+  --labelBackgroundColor: #424549;
   --backgroundImage: url("../public/assets/backgroundImages/cuteCats.webp");
   --creditsColor: #0a0a0a;
   --devIconBackgroundColor: #212121;

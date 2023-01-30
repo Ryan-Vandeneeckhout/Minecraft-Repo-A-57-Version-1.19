@@ -10,9 +10,7 @@ import UploadFile from "./uploadFileComponents/uploadFile";
 const EditFileContainer = (props) => {
   const downloadFileBedRockIDRef = useRef(null);
   const downloadFileNPCCodeRef = useRef(null);
-
   const [valueInput, setValueInput] = useState(400);
-  const [filename, setFileName] = useState("No File Specified");
   const [nameInput, setNameInput] = useState("Kitty_Shizz");
   const [dataBedRockOriginal, setDataBedRockOriginal] = useState(null);
   const [, setDataConvertedStateHolder, dataConvertedStateHolderRef] = useState(
@@ -27,20 +25,20 @@ const EditFileContainer = (props) => {
     downloadFileBedRockIDRef.current.classList.remove("blueB", "DisplayNone");
     downloadFileBedRockIDRef.current.classList.add("greenB", "DisplayFlex");
     downloadFileBedRockIDRef.current.setAttribute("href", fileUrl);
-    if (filename.includes(".txt")) {
+    if (props.filename.includes(".txt")) {
       downloadFileBedRockIDRef.current.setAttribute(
         "download",
-        filename.replace(".txt", "") + " Optimized Build.txt"
+        props.filename.replace(".txt", "") + " Optimized Build.txt"
       );
-    } else if (!filename.includes(".")) {
+    } else if (!props.filename.includes(".")) {
       downloadFileBedRockIDRef.current.setAttribute(
         "download",
-        filename + " Optimized Build.txt"
+        props.filename + " Optimized Build.txt"
       );
     } else {
       downloadFileBedRockIDRef.current.setAttribute(
         "download",
-        filename.replace(".mcfunction", "") + "Optimized Build.mcfunction"
+        props.filename.replace(".mcfunction", "") + "Optimized Build.mcfunction"
       );
     }
   }
@@ -56,20 +54,21 @@ const EditFileContainer = (props) => {
     downloadFileNPCCodeRef.current.classList.remove("blueB", "DisplayNone");
     downloadFileNPCCodeRef.current.classList.add("greenB", "DisplayFlex");
     downloadFileNPCCodeRef.current.setAttribute("href", fileUrl);
-    if (filename.includes(".txt")) {
+    if (props.filename.includes(".txt")) {
       downloadFileNPCCodeRef.current.setAttribute(
         "download",
-        filename.replace(".txt", "") + " Optimized NPC Build.txt"
+        props.filename.replace(".txt", "") + " Optimized NPC Build.txt"
       );
-    } else if (!filename.includes(".")) {
+    } else if (!props.filename.includes(".")) {
       downloadFileNPCCodeRef.current.setAttribute(
         "download",
-        filename + " Optimized NPC Build.txt"
+        props.filename + " Optimized NPC Build.txt"
       );
     } else {
       downloadFileNPCCodeRef.current.setAttribute(
         "download",
-        filename.replace(".mcfunction", "") + "Optimized NPC Build.mcfunction"
+        props.filename.replace(".mcfunction", "") +
+          "Optimized NPC Build.mcfunction"
       );
     }
   }
@@ -80,7 +79,7 @@ const EditFileContainer = (props) => {
         <ul className="wrapperEditFileList">
           <UploadFile
             contentFileUploadedPreviewRef={props.contentFileUploadedPreviewRef}
-            setFileName={setFileName}
+            setFileName={props.setFileName}
           />
           <BedRockIDConversionButton
             contentFileUploadedPreviewRef={props.contentFileUploadedPreviewRef}
@@ -96,10 +95,13 @@ const EditFileContainer = (props) => {
             setFailedIdsDownload={props.setFailedIdsDownload}
             loading={props.loading}
             setLoading={props.setLoading}
+            setGreyWidth={props.setGreyWidth}
+            setProgessStatus={props.setProgessStatus}
+            setGreenWidth={props.setGreenWidth}
           />
           <TextInput
-            nameInput={filename}
-            setNameInput={setFileName}
+            nameInput={props.filename}
+            setNameInput={props.setFileName}
             labelText={"Edit filename:"}
           />
           <DownloadFileInput
@@ -113,7 +115,7 @@ const EditFileContainer = (props) => {
             labelText={"Edit Creator Name:"}
           />
           <FileOutPutButtonNPC
-            FileName={filename}
+            FileName={props.filename}
             contentOutputTargetHoldDataRef={dataBedRockOriginal}
             contentOutputTargetRef={props.contentFileOutputConversionRef}
             downloadFile={downloadFileNPC}

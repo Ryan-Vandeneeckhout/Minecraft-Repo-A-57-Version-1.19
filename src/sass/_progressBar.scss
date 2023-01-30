@@ -1,0 +1,33 @@
+.progressBarContainer {
+  width: 100%;
+}
+.Bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 0;
+  width: 100%;
+  min-width: 100px;
+
+  .dot {
+    height: 24px;
+    width: 12.5%;
+  }
+
+  .grey {
+    background-color: white;
+  }
+
+  .greyBar {
+    height: 40px;
+    background-color: #424549;
+    flex: 1 0 auto; 
+  }
+  .greenBar {
+    height: 40px;
+    background-color: #7289da;
+  }
+}
+
+.green {
+  background-color: #3dcc79;
+}

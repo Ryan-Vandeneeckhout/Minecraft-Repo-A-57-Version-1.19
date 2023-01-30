@@ -35,17 +35,19 @@ const BedRockIDConversionButton = (props) => {
       str = str.replaceAll(/#.*?\)/g, "");
       for (let i = 0; i < 3; i++) str = str.substring(str.indexOf("\n") + 1);
     }
-
+    str = str.replaceAll(/execute.*? 0/g, "");
+    str = str.replaceAll("execute", "");
+    str = str.replaceAll(" 0", "");
+    str = str.replaceAll(/(^[ \t]*\n)/gm, "");
     Object.keys(IndexKeyMineCraftNPC).forEach((key) => {
       str = str.replaceAll(key, IndexKeyMineCraftNPC[key]);
-      props.setLoading(
-        "Conversion at " +
-          Math.ceil(
-            100 *
-              (Object.keys(IndexKeyMineCraftNPC).indexOf(key) /
-                Object.keys(IndexKeyMineCraftNPC).length)
-          ) +
-          "%"
+
+      props.setGreenWidth(
+        Math.ceil(
+          100 *
+            (Object.keys(IndexKeyMineCraftNPC).indexOf(key) /
+              Object.keys(IndexKeyMineCraftNPC).length)
+        )
       );
     });
 
@@ -79,8 +81,10 @@ const BedRockIDConversionButton = (props) => {
       }
     });
 
-    if (matches === [] || matches === null || matches.length === 0);
-    else {
+    if (matches === [] || matches === null || matches.length === 0) {
+      props.setGreenWidth(100);
+      props.setProgessStatus("Conversion Complete");
+    } else {
       let uniqueChars = [...new Set(matches)];
       setFailedIds([uniqueChars.toString().replaceAll("\\", "")]);
       props.setErrorContent(`${failedIdsRef.current}`);
@@ -90,6 +94,7 @@ const BedRockIDConversionButton = (props) => {
       );
       props.downloadFileFailedIDs();
       props.closeWindow(true);
+      props.setProgessStatus("Conversion Errors Detected");
       FireBaseIDs();
     }
   };

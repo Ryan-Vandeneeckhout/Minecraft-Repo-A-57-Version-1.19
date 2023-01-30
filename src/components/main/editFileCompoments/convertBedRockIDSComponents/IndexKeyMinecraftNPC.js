@@ -1,4 +1,119 @@
 export const IndexKeyMineCraftNPC = {
+  '["coral_direction":1,"coral_hang_type_bit":false,"dead_bit":false]': "1",
+  '["direction":0,"end_portal_eye_bit":false]': "0",
+  '["direction":0,"in_wall_bit":true,"open_bit":false]': "0",
+  '["direction":"1","in_wall_bit":true,"open_bit":false]': "1",
+  '["direction":"2","in_wall_bit":true,"open_bit":false]': "2",
+  '["direction":"3","in_wall_bit":true,"open_bit":false]': "3",
+  '["facing_direction":"3","growth":"7"]': "3",
+  '["facing_direction":"3","item_frame_map_bit":false,"item_frame_photo_bit":false]':
+    "3",
+  '["facing_direction":"3","item_frame_map_bit":true,"item_frame_photo_bit":false]':
+    "3",
+  '["facing_direction":"4","growth":"7"]': "4",
+  '["persistent_bit":false,"update_bit":false]': 0,
+  '["rail_data_bit":true,"rail_direction":"1"]': "1",
+  '["rail_data_bit":true,"rail_direction":"5"]': "5",
+  '["stone_slab_type_"4"":"cut_sandstone","top_slot_bit":false]': "4",
+  '["wall_block_type":"andesite","wall_connection_type_east":"none","wall_connection_type_north":"none","wall_connection_type_south":"none","wall_connection_type_west":"tall","wall_post_bit":true]':
+    "4",
+  '["wall_block_type":"andesite","wall_connection_type_east":"none","wall_connection_type_north":"tall","wall_connection_type_south":"tall","wall_connection_type_west":"none","wall_post_bit":false]':
+    "4",
+  '["wall_block_type":"andesite","wall_connection_type_east":"short","wall_connection_type_north":"short","wall_connection_type_south":"none","wall_connection_type_west":"short","wall_post_bit":true]':
+    "4",
+  '["wall_block_type":"andesite","wall_connection_type_east":"short","wall_connection_type_north":"tall","wall_connection_type_south":"none","wall_connection_type_west":"tall","wall_post_bit":true]':
+    "4",
+  '["wall_block_type":"andesite","wall_connection_type_east":"tall","wall_connection_type_north":"tall","wall_connection_type_south":"none","wall_connection_type_west":"none","wall_post_bit":true]':
+    "4",
+  '["wall_block_type":"andesite","wall_connection_type_east":"tall","wall_connection_type_north":"tall","wall_connection_type_south":"none","wall_connection_type_west":"tall","wall_post_bit":true]':
+    "4",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"none","wall_connection_type_north":"none","wall_connection_type_south":"none","wall_connection_type_west":"tall","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"none","wall_connection_type_north":"none","wall_connection_type_south":"short","wall_connection_type_west":"tall","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"none","wall_connection_type_north":"short","wall_connection_type_south":"none","wall_connection_type_west":"tall","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"none","wall_connection_type_north":"tall","wall_connection_type_south":"tall","wall_connection_type_west":"none","wall_post_bit":false]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"none","wall_connection_type_north":"tall","wall_connection_type_south":"tall","wall_connection_type_west":"none","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"none","wall_connection_type_north":"tall","wall_connection_type_south":"tall","wall_connection_type_west":"short","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"none","wall_connection_type_north":"tall","wall_connection_type_south":"tall","wall_connection_type_west":"tall","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"short","wall_connection_type_north":"none","wall_connection_type_south":"none","wall_connection_type_west":"tall","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"tall","wall_connection_type_north":"none","wall_connection_type_south":"none","wall_connection_type_west":"none","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"tall","wall_connection_type_north":"none","wall_connection_type_south":"none","wall_connection_type_west":"short","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"tall","wall_connection_type_north":"none","wall_connection_type_south":"none","wall_connection_type_west":"tall","wall_post_bit":false]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"tall","wall_connection_type_north":"none","wall_connection_type_south":"none","wall_connection_type_west":"tall","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"tall","wall_connection_type_north":"none","wall_connection_type_south":"short","wall_connection_type_west":"none","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"tall","wall_connection_type_north":"none","wall_connection_type_south":"short","wall_connection_type_west":"short","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"tall","wall_connection_type_north":"none","wall_connection_type_south":"short","wall_connection_type_west":"tall","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"tall","wall_connection_type_north":"short","wall_connection_type_south":"none","wall_connection_type_west":"none","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"tall","wall_connection_type_north":"tall","wall_connection_type_south":"none","wall_connection_type_west":"tall","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"nether_brick","wall_connection_type_east":"tall","wall_connection_type_north":"tall","wall_connection_type_south":"tall","wall_connection_type_west":"none","wall_post_bit":true]':
+    "9",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"none","wall_connection_type_north":"none","wall_connection_type_south":"none","wall_connection_type_west":"short","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"none","wall_connection_type_north":"none","wall_connection_type_south":"tall","wall_connection_type_west":"none","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"none","wall_connection_type_north":"none","wall_connection_type_south":"tall","wall_connection_type_west":"short","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"none","wall_connection_type_north":"short","wall_connection_type_south":"none","wall_connection_type_west":"none","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"none","wall_connection_type_north":"short","wall_connection_type_south":"short","wall_connection_type_west":"none","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"none","wall_connection_type_north":"short","wall_connection_type_south":"short","wall_connection_type_west":"short","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"none","wall_connection_type_north":"short","wall_connection_type_south":"tall","wall_connection_type_west":"tall","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"none","wall_connection_type_north":"tall","wall_connection_type_south":"none","wall_connection_type_west":"short","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"none","wall_connection_type_north":"tall","wall_connection_type_south":"short","wall_connection_type_west":"short","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"none","wall_connection_type_north":"tall","wall_connection_type_south":"tall","wall_connection_type_west":"none","wall_post_bit":false]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"none","wall_connection_type_north":"tall","wall_connection_type_south":"tall","wall_connection_type_west":"short","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"none","wall_connection_type_north":"tall","wall_connection_type_south":"tall","wall_connection_type_west":"tall","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"short","wall_connection_type_north":"none","wall_connection_type_south":"none","wall_connection_type_west":"none","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"short","wall_connection_type_north":"none","wall_connection_type_south":"tall","wall_connection_type_west":"none","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"short","wall_connection_type_north":"short","wall_connection_type_south":"short","wall_connection_type_west":"none","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"short","wall_connection_type_north":"short","wall_connection_type_south":"short","wall_connection_type_west":"short","wall_post_bit":false]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"short","wall_connection_type_north":"short","wall_connection_type_south":"tall","wall_connection_type_west":"none","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"short","wall_connection_type_north":"short","wall_connection_type_south":"tall","wall_connection_type_west":"short","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"short","wall_connection_type_north":"tall","wall_connection_type_south":"none","wall_connection_type_west":"none","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"short","wall_connection_type_north":"tall","wall_connection_type_south":"short","wall_connection_type_west":"none","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"short","wall_connection_type_north":"tall","wall_connection_type_south":"tall","wall_connection_type_west":"tall","wall_post_bit":false]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"tall","wall_connection_type_north":"short","wall_connection_type_south":"none","wall_connection_type_west":"short","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"tall","wall_connection_type_north":"tall","wall_connection_type_south":"tall","wall_connection_type_west":"none","wall_post_bit":true]':
+    "7",
+  '["wall_block_type":"stone_brick","wall_connection_type_east":"tall","wall_connection_type_north":"tall","wall_connection_type_south":"tall","wall_connection_type_west":"tall","wall_post_bit":false]':
+    "7",
+  "[Null]": "0",
+
+  " none": "",
   "[type=ArmorStand,name=STRCMD]": "air",
   'structure_block ["structure_block_type": "load"]': "air",
   'structure_block ["structure_block_type":"save"]': "air",
