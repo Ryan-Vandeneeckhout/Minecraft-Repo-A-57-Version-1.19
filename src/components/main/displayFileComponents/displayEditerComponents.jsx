@@ -1,10 +1,26 @@
+import TextInput from "../../inputs/TextInput";
 import EditorTextAreaContainer from "./textareaComponents/EditorTextAreaContainer";
 
 const DisplayEditerComponents = (props) => {
   return (
     <section className="displayFileEditorSection">
       <div className="displayFileEditorWrapper">
-        <h4>File: {props.filename}</h4>
+        <div className="upperSiteContent">
+          <div className="displayEditorInput">
+            <TextInput
+              nameInput={props.filename}
+              setNameInput={props.setFileName}
+              labelText={"FILE:"}
+            />
+          </div>
+          <div className="displayEditorInput">
+            <TextInput
+              nameInput={props.nameInput}
+              setNameInput={props.setNameInput}
+              labelText={"Creator:"}
+            />{" "}
+          </div>
+        </div>
         <div className="orderEditorOne">
           <EditorTextAreaContainer
             TextInputValue={"Preview Your File Input Here..."}

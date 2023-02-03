@@ -1,6 +1,5 @@
 .errorContentIdsFoundUnconverted {
     position: fixed;
-    height: 200px;
     width: 500px;
     top: 50%;
     left: 50%;
@@ -9,17 +8,21 @@
     outline: solid black 5px;
 
     .errorContentIdsFoundUnconvertedWrapper {
-        padding: 15px;
+        padding: 25px;
         position: relative;
         text-align: center;
         @include Maxsize100;
 
-        button {
+        .closeWindowButton {
             cursor: pointer;
             position: absolute;
             top: 0;
-            left: 0;
+            right: 0;
             border: none;
+            width: 30px;
+            height: 30px;
+            color: black;
+            font-weight: 900;
             outline: solid 2px black;
         }
         button:hover {

@@ -12,6 +12,7 @@ const SideMenuMainMenu = (props) => {
               props.setMainMenu(false);
               props.setThemeMenu(item.ThemeSetting === "true");
               props.setMusicMenu(item.MusicSetting === "true");
+              props.setMenuSetting(item.MainMenu);
             }}
           >
             <span>

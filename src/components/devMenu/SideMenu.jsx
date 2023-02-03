@@ -21,6 +21,7 @@ const SideMenu = (props) => {
           setMainMenu={setMainMenu}
           setThemeMenu={setThemeMenu}
           setMusicMenu={setMusicMenu}
+          setMenuSetting={props.setMenuSetting}
           musicMenuState={musicMenuState}
         />
       </ul>

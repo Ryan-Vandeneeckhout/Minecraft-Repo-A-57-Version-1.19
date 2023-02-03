@@ -57,6 +57,9 @@ const BedRockIDConversionButton = (props) => {
     props.setDataBedRockOriginal(str);
     props.setDataConvertedStateHolder(str);
     props.downloadFile();
+    props.setIDOutputBedRockFailedData(
+      (str = str.replaceAll("]", "] <---Failed ID"))
+    );
 
     const strs = [str];
     const rx = /\[([^\][]*)]/g;

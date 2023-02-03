@@ -46,6 +46,8 @@
         @include InputLabelEditFiles;
         padding: 0 15px;
         text-transform: capitalize;
+        background-color: transparent;
+        color: white;
       }
       input:hover {
         background-color: rgb(171, 168, 168);

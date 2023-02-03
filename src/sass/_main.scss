@@ -79,6 +79,24 @@ main {
         @include Maxsize100;
         padding: 5%;
 
+        .upperSiteContent {
+          @include FlexRow;
+          width: 100%;
+
+          label {
+            margin-right: 15px;
+            font-size: 16px;
+            font-weight: 800;
+            letter-spacing: 1px;
+          }
+          input {
+            padding: 5px;
+            border-radius: 10px;
+            padding-left: 10px;
+            margin-right: 30px;
+          }
+        }
+
         .textAreaContainer {
           height: 50%;
           width: 100%;

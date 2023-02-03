@@ -511,10 +511,9 @@ export const IndexKeyMineCraftNPC = {
   '["color":"brown"]': "12",
   '["color":"cyan"]': "9",
   '["color":"gray"]': "7",
-  '["color":"green"]': "13",
+
   '["color":"lightblue"]': "3",
   '["color":"light_blue"]': "3",
-  '["color":"lime"]': "5",
   '["color":"magenta"]': "2",
   '["color":"orange"]': "1",
   '["color":"pink"]': "6",

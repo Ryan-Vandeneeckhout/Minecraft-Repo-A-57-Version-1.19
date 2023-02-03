@@ -2,7 +2,6 @@ import { useRef } from "react";
 import useState from "react-usestateref";
 import DownloadFileInput from "../../inputs/downloadFileInput";
 import NPCInput from "../../inputs/NumberInput";
-import TextInput from "../../inputs/TextInput";
 import BedRockIDConversionButton from "./convertBedRockIDSComponents/BedRockIDConversionButton";
 import FileOutPutButtonNPC from "./NPCcomponents/FileOutPutButtonNPC";
 import UploadFile from "./uploadFileComponents/uploadFile";
@@ -11,14 +10,9 @@ const EditFileContainer = (props) => {
   const downloadFileBedRockIDRef = useRef(null);
   const downloadFileNPCCodeRef = useRef(null);
   const [valueInput, setValueInput] = useState(400);
-  const [nameInput, setNameInput] = useState("Kitty_Shizz");
-  const [dataBedRockOriginal, setDataBedRockOriginal] = useState(null);
-  const [, setDataConvertedStateHolder, dataConvertedStateHolderRef] = useState(
-    null
-  );
 
   function downloadFile() {
-    const blob = new Blob([dataConvertedStateHolderRef.current], {
+    const blob = new Blob([props.dataConvertedStateHolderRef.current], {
       type: "plain/text",
     });
     const fileUrl = URL.createObjectURL(blob);
@@ -90,38 +84,29 @@ const EditFileContainer = (props) => {
             closeWindow={props.closeWindow}
             setErrorContent={props.setErrorContent}
             downloadFile={downloadFile}
-            setDataBedRockOriginal={setDataBedRockOriginal}
-            setDataConvertedStateHolder={setDataConvertedStateHolder}
+            setDataBedRockOriginal={props.setDataBedRockOriginal}
+            setDataConvertedStateHolder={props.setDataConvertedStateHolder}
             setFailedIdsDownload={props.setFailedIdsDownload}
             loading={props.loading}
             setLoading={props.setLoading}
             setGreyWidth={props.setGreyWidth}
             setProgessStatus={props.setProgessStatus}
             setGreenWidth={props.setGreenWidth}
-          />
-          <TextInput
-            nameInput={props.filename}
-            setNameInput={props.setFileName}
-            labelText={"Edit filename:"}
+            setIDOutputBedRockFailedData={props.setIDOutputBedRockFailedData}
           />
           <DownloadFileInput
             downloadFileRef={downloadFileBedRockIDRef}
             downloadText={"Download BedRock Id Conversion"}
           />
           <NPCInput valueInput={valueInput} setValueInput={setValueInput} />
-          <TextInput
-            nameInput={nameInput}
-            setNameInput={setNameInput}
-            labelText={"Edit Creator Name:"}
-          />
           <FileOutPutButtonNPC
             FileName={props.filename}
-            contentOutputTargetHoldDataRef={dataBedRockOriginal}
+            contentOutputTargetHoldDataRef={props.dataBedRockOriginal}
             contentOutputTargetRef={props.contentFileOutputConversionRef}
             downloadFile={downloadFileNPC}
             valueInput={valueInput}
-            nameInput={nameInput}
-            setDataConvertedStateHolder={setDataConvertedStateHolder}
+            nameInput={props.nameInput}
+            setDataConvertedStateHolder={props.setDataConvertedStateHolder}
           />
           <DownloadFileInput
             downloadFileRef={downloadFileNPCCodeRef}

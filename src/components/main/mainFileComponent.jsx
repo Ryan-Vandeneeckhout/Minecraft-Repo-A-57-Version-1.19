@@ -8,6 +8,7 @@ import MainBackground from "./mainBackgroundComponents/mainBackground";
 const MainFileComponent = (props) => {
   const [closeWindow, setCloseWindow] = useState(false);
   const [errorContent, setErrorContent] = useState("");
+  const [menuSetting, setMenuSetting] = useState("defaultMenu");
   const [loading, setLoading] = useState(
     "Get Started Converting a MineCraft Build"
   );
@@ -15,20 +16,60 @@ const MainFileComponent = (props) => {
   const [, setGreenWidth, greenWidthRef] = useState(1);
   const [, setGreyWidth, greyWidthRef] = useState(99);
   const [, setProgessStatus, progressStatusRef] = useState("Idle");
+  const [
+    ,
+    setIDOutputBedRockFailedData,
+    IDOutPutBedRockFailedDataRef,
+  ] = useState("");
+  const [, setDataConvertedStateHolder, dataConvertedStateHolderRef] = useState(
+    null
+  );
+  const [dataBedRockOriginal, setDataBedRockOriginal] = useState(null);
   const IdDownloadRef = useRef(null);
+  const contentFileOutputConversionRef = useRef(null);
 
   const closeWindowFunction = () => {
     setCloseWindow(!closeWindow);
   };
 
   function downloadFileFailedIDs() {
-    const blob = new Blob([failedIdsDownloadRef.current], {
-      type: "plain/text",
-    });
+    const blob = new Blob(
+      [
+        failedIdsDownloadRef.current +
+          "\n" +
+          IDOutPutBedRockFailedDataRef.current,
+      ],
+      {
+        type: "plain/text",
+      }
+    );
     const fileUrl = URL.createObjectURL(blob);
     IdDownloadRef.current.setAttribute("href", fileUrl);
     IdDownloadRef.current.setAttribute("download", "FailedIds.txt");
   }
+
+  const ForceReplacementOfFailedIDs = () => {
+    const rx = /\[([^\][]*)]/g;
+
+    let cleanData = dataBedRockOriginal;
+
+    const strs = [dataBedRockOriginal];
+    strs.forEach((x) => {
+      if (x.match(rx) === null);
+      else {
+        let matchID = [...new Set(x.match(rx))];
+        matchID.forEach((x) => {
+          let D = x.toString().replaceAll("\\", "");
+          cleanData = cleanData.replaceAll(D, "");
+          console.log(D);
+        });
+
+        setDataBedRockOriginal(cleanData);
+        contentFileOutputConversionRef.current.value = cleanData;
+        console.log(cleanData);
+      }
+    });
+  };
 
   return (
     <main>
@@ -39,11 +80,17 @@ const MainFileComponent = (props) => {
           closeWindow={setCloseWindow}
           setFailedIdsDownload={setFailedIdsDownload}
           downloadFileFailedIDs={downloadFileFailedIDs}
+          setIDOutputBedRockFailedData={setIDOutputBedRockFailedData}
           loading={loading}
           setLoading={setLoading}
           setGreyWidth={setGreyWidth}
           setProgessStatus={setProgessStatus}
           setGreenWidth={setGreenWidth}
+          setDataBedRockOriginal={setDataBedRockOriginal}
+          dataBedRockOriginal={dataBedRockOriginal}
+          setDataConvertedStateHolder={setDataConvertedStateHolder}
+          dataConvertedStateHolderRef={dataConvertedStateHolderRef}
+          contentFileOutputConversionRef={contentFileOutputConversionRef}
         />
         <MainBackground
           DevMenuRef={props.DevMenuRef}
@@ -54,10 +101,12 @@ const MainFileComponent = (props) => {
           greenWidthRef={greenWidthRef}
           greyWidthRef={greyWidthRef}
           progressStatusRef={progressStatusRef}
+          menuSetting={menuSetting}
         />
         <SideMenu
           ResetTheme={props.ResetTheme}
           devMenuVisible={props.devMenuVisible}
+          setMenuSetting={setMenuSetting}
         />
         <DevMenuOverlay
           devMenuFunction={props.devMenuFunction}
@@ -77,9 +126,18 @@ const MainFileComponent = (props) => {
               that remain unconverted in a DM on discord.
             </p>
             <a ref={IdDownloadRef} href="download">
-              Download List of Unconverted Ids Found
+              Download List of Unconverted IDs and Fix Manually.
             </a>
-            <button onClick={closeWindowFunction}>Close Window</button>
+            <button onClick={ForceReplacementOfFailedIDs}>
+              Remove IDs and Continue:{" "}
+              <span>
+                *Warning Removal of IDs can change the face of Directionial
+                Blocks
+              </span>
+            </button>
+            <button className="closeWindowButton" onClick={closeWindowFunction}>
+              X
+            </button>
           </div>
         </div>
       </div>
