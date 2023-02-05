@@ -58,13 +58,12 @@ function parseImportedData(file) {
 
 function exportFunction() {
   worker.postMessage({
-    tiles: true,
-    blockstates: true,
-    entities: true,
+    tiles: document.getElementById("tiles").checked,
+    blockstates: document.getElementById("blockstates").checked,
+    entities: document.getElementById("entities").checked,
     structure: structure,
   });
   document.querySelector("#download-btn").style.display = "none";
-  document.querySelector("#loading-btn").style.display = "block";
 }
 
 function downloadFunction(data) {
@@ -105,7 +104,6 @@ function downloadFunction(data) {
   }
 
   document.querySelector("#download-btn").style.display = "none";
-  document.querySelector("#loading-btn").style.display = "none";
 }
 
 function download() {

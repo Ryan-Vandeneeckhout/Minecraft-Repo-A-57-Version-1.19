@@ -343,7 +343,6 @@ function getLowestEntry(list, size) {
 async function structureToFunction(
   includeBlocks,
   placeAir,
-  keepWaterlog,
   keepStates,
   tileContainerItems,
   includeEntities,
@@ -571,27 +570,12 @@ async function structureToFunction(
     });
   }
 
-  //Blocks (waterlog layer)
-  if (keepWaterlog && includeBlocks) {
-    postMessage({
-      type: "progress",
-      message: "Converting waterlog block layer...",
-    });
-    output.push("#Blocks (blocklog layer)");
-    output = output.concat(await convertTiles(1, placeAir, size, keepStates));
-    postMessage({
-      type: "progress",
-      message: "Finished converting waterlog layer",
-    });
-  }
-
   //Blocks (main layer)
   if (includeBlocks) {
     postMessage({
       type: "progress",
       message: "Converting main block layer...",
     });
-    output.push("#Blocks (default layer)");
     output = output.concat(await convertTiles(0, placeAir, size, keepStates));
     postMessage({
       type: "progress",
