@@ -27,6 +27,8 @@ function importFile(file, projectVariable, readertype, callback) {
         console.log("ab");
       }
       document.querySelector("#upload").style.display = "none";
+      document.getElementById("output-logs").value +=
+        "Upload Successful!" + "\n";
       document.querySelector("#download-btn").style.display = "flex";
 
       break;

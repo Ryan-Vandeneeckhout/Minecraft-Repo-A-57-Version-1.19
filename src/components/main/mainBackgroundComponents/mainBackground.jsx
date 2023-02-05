@@ -40,8 +40,8 @@ const MainBackground = (props) => {
         <div className="mainBackgroundWrapper">
           <h1>Status: {props.progressStatusRef.current}</h1>
           <ProgressBarWidth
-            widthGrey={props.greyWidthRef.current}
-            widthGreen={props.greenWidthRef.current}
+            widthGrey={props.greyWidthRef}
+            widthGreen={props.greenWidthRef}
           />
           <h3>{props.loading}</h3>
         </div>

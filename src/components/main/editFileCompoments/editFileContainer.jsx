@@ -96,47 +96,57 @@ const EditFileContainer = (props) => {
             </span>{" "}
             Structure to Function Converter
           </button>
-          <UploadFile
-            contentFileUploadedPreviewRef={props.contentFileUploadedPreviewRef}
-            setFileName={props.setFileName}
-          />
-          <BedRockIDConversionButton
-            contentFileUploadedPreviewRef={props.contentFileUploadedPreviewRef}
-            contentFileOutputConversionRef={
-              props.contentFileOutputConversionRef
-            }
-            downloadFileFailedIDs={props.downloadFileFailedIDs}
-            closeWindow={props.closeWindow}
-            setErrorContent={props.setErrorContent}
-            downloadFile={downloadFile}
-            setDataBedRockOriginal={props.setDataBedRockOriginal}
-            setDataConvertedStateHolder={props.setDataConvertedStateHolder}
-            setFailedIdsDownload={props.setFailedIdsDownload}
-            loading={props.loading}
-            setLoading={props.setLoading}
-            setGreyWidth={props.setGreyWidth}
-            setProgessStatus={props.setProgessStatus}
-            setGreenWidth={props.setGreenWidth}
-            setIDOutputBedRockFailedData={props.setIDOutputBedRockFailedData}
-          />
-          <DownloadFileInput
-            downloadFileRef={downloadFileBedRockIDRef}
-            downloadText={"Download BedRock Id Conversion"}
-          />
-          <NPCInput valueInput={valueInput} setValueInput={setValueInput} />
-          <FileOutPutButtonNPC
-            FileName={props.filename}
-            contentOutputTargetHoldDataRef={props.dataBedRockOriginal}
-            contentOutputTargetRef={props.contentFileOutputConversionRef}
-            downloadFile={downloadFileNPC}
-            valueInput={valueInput}
-            nameInput={props.nameInput}
-            setDataConvertedStateHolder={props.setDataConvertedStateHolder}
-          />
-          <DownloadFileInput
-            downloadFileRef={downloadFileNPCCodeRef}
-            downloadText={"Download NPC Conversion"}
-          />
+          {props.STF ? (
+            <>
+              <UploadFile
+                contentFileUploadedPreviewRef={
+                  props.contentFileUploadedPreviewRef
+                }
+                setFileName={props.setFileName}
+              />
+              <BedRockIDConversionButton
+                contentFileUploadedPreviewRef={
+                  props.contentFileUploadedPreviewRef
+                }
+                contentFileOutputConversionRef={
+                  props.contentFileOutputConversionRef
+                }
+                downloadFileFailedIDs={props.downloadFileFailedIDs}
+                closeWindow={props.closeWindow}
+                setErrorContent={props.setErrorContent}
+                downloadFile={downloadFile}
+                setDataBedRockOriginal={props.setDataBedRockOriginal}
+                setDataConvertedStateHolder={props.setDataConvertedStateHolder}
+                setFailedIdsDownload={props.setFailedIdsDownload}
+                loading={props.loading}
+                setLoading={props.setLoading}
+                setGreyWidth={props.setGreyWidth}
+                setProgessStatus={props.setProgessStatus}
+                setGreenWidth={props.setGreenWidth}
+                setIDOutputBedRockFailedData={
+                  props.setIDOutputBedRockFailedData
+                }
+              />
+              <DownloadFileInput
+                downloadFileRef={downloadFileBedRockIDRef}
+                downloadText={"Download BedRock Id Conversion"}
+              />
+              <NPCInput valueInput={valueInput} setValueInput={setValueInput} />
+              <FileOutPutButtonNPC
+                FileName={props.filename}
+                contentOutputTargetHoldDataRef={props.dataBedRockOriginal}
+                contentOutputTargetRef={props.contentFileOutputConversionRef}
+                downloadFile={downloadFileNPC}
+                valueInput={valueInput}
+                nameInput={props.nameInput}
+                setDataConvertedStateHolder={props.setDataConvertedStateHolder}
+              />
+              <DownloadFileInput
+                downloadFileRef={downloadFileNPCCodeRef}
+                downloadText={"Download NPC Conversion"}
+              />{" "}
+            </>
+          ) : null}
         </ul>
       </div>
     </section>

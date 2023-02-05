@@ -4,7 +4,7 @@ const ProgressBarWidth = (props) => {
       <div className="Bar">
         <div
           className="greenBar"
-          style={{ color: "green", width: `${props.widthGreen}%` }}
+          style={{ color: "green", width: `${props.widthGreen.current}%` }}
         />
         <div className="greyBar" style={{ color: "grey" }} />
       </div>
