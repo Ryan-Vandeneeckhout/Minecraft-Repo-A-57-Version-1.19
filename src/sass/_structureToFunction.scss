@@ -1,0 +1,114 @@
+.StructureButton {
+    border: none;
+    font-weight: 600;
+    height: 60px;
+}
+
+.StructureButton:hover {
+    background-color: lightgrey;
+    color: white;
+    cursor: pointer;
+}
+
+.structure2FunctionSection {
+    background-color: var(--displayFileEditorSectionColor);
+    border-right: solid grey 1px;
+    color: var(--editorTextColor);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    outline: solid darkgray 1px;
+    overflow: hidden;
+
+    h2 {
+        text-align: center
+    }
+
+    .structure2FunctionWrapper{
+    @include Maxsize100;
+    @include FlexColumnCenter;
+    padding: 5%;
+
+    .uploadButtonSTF {
+        label {
+            @include ButtonStyles;
+            display: flex;
+            background-color: #424549;
+            border: none;
+            font-weight: 800;
+            max-width: 200px;
+            margin-bottom: 20px;
+            width: 200px;
+            justify-content: center;
+            letter-spacing: 1px;
+            text-align: center;
+            transition: background-color 1s, color 1s;
+        }
+
+        label:hover {
+            background-color: goldenrod;
+            color: black;
+            cursor: pointer;
+        }
+
+        input {
+            display: none;
+        }
+    }
+
+    textarea {
+        height: 50%;
+        width: 100%;
+        color: white;
+        padding: 10px;
+    }
+    .buttonsContainer {
+        @include FlexColumnCenter;
+        padding: 2% 10%;
+        width: 100%;
+    }
+
+    .parameters-tab {
+        width: 100%;
+        justify-content: space-evenly;
+        display: flex;
+    }
+    p {
+        a {
+            color: white;
+            text-decoration: none;
+            font-weight: 800;
+        }
+        a:hover {
+            color: goldenrod;
+        }
+    }
+    button {
+        @include ButtonStyles;
+        display: none;
+        background-color: #424549;
+        border: none;
+        margin-top: 20px;
+        max-width: 200px;
+        margin-bottom: 20px;
+    }
+    button:hover {
+        @include ButtonHoverStyles;
+    }
+    .downloadCompletedFile:hover {
+        @include ButtonHoverStyles;
+    }
+    .downloadCompletedFile {
+        @include ButtonStyles;
+        background-color: green;
+        color: white;
+        display: none;
+        justify-content: center;
+        margin-top: 20px;
+        max-width: 200px;
+        text-align: center;
+        text-decoration: none;
+    }
+}
+}

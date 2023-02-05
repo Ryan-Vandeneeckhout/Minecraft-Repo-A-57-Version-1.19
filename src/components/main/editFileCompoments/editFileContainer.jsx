@@ -1,5 +1,7 @@
 import { useRef } from "react";
 import useState from "react-usestateref";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 import DownloadFileInput from "../../inputs/downloadFileInput";
 import NPCInput from "../../inputs/NumberInput";
 import BedRockIDConversionButton from "./convertBedRockIDSComponents/BedRockIDConversionButton";
@@ -9,6 +11,7 @@ import UploadFile from "./uploadFileComponents/uploadFile";
 const EditFileContainer = (props) => {
   const downloadFileBedRockIDRef = useRef(null);
   const downloadFileNPCCodeRef = useRef(null);
+  const STFRef = useRef(null);
   const [valueInput, setValueInput] = useState(400);
 
   function downloadFile() {
@@ -67,10 +70,32 @@ const EditFileContainer = (props) => {
     }
   }
 
+  const Structure2FunctionSwitch = () => {
+    props.setStructure2F((prevCheck) => !prevCheck);
+
+    if (props.STF === true) {
+      STFRef.current.style.backgroundColor = "green";
+      STFRef.current.style.color = "white";
+    } else {
+      STFRef.current.style.backgroundColor = "goldenrod";
+      STFRef.current.style.color = "black";
+    }
+  };
+
   return (
     <section className="editFileContainerSection">
       <div className="wrapperEditFile">
         <ul className="wrapperEditFileList">
+          <button
+            ref={STFRef}
+            className="StructureButton yellowB"
+            onClick={Structure2FunctionSwitch}
+          >
+            <span>
+              <FontAwesomeIcon className="fontAweIcon" icon="fa-database" />
+            </span>{" "}
+            Structure to Function Converter
+          </button>
           <UploadFile
             contentFileUploadedPreviewRef={props.contentFileUploadedPreviewRef}
             setFileName={props.setFileName}

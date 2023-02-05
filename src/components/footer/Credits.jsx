@@ -3,9 +3,11 @@ const Credits = () => {
     <p>
       <span>
         Created by Kitty Shizz &copy; 2022 with the NPC Tool Codebase provided
-        by Brutus314 and Clawsky123 - Special Thanks To Chronicles765!!
+        by Brutus314 and Clawsky123, STF by{" "}
+        <a href="https://github.com/rebrainertv">ReBrainer</a> - Special Thanks
+        To Chronicles765!!
       </span>
-      <span>Version 2.5</span>
+      <span>Version 3.14</span>
     </p>
   );
 };

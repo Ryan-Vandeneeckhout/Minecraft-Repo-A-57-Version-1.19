@@ -6,8 +6,14 @@ const FileOutPutButtonNPC = (props) => {
   const buttonNPCRef = useRef(null);
   const FileOutputNPCLogic = () => {
     let NameBuilder = props.nameInput.replaceAll(" ", "_");
-    if (props.contentOutputTargetRef.current.value === undefined) {
+    if (
+      props.contentOutputTargetRef.current.value === (undefined || null) ||
+      props.contentOutputTargetHoldDataRef === null
+    ) {
+      buttonNPCRef.current.classList.add("redB");
+      buttonNPCRef.current.classList.remove("yellowB");
     } else {
+      console.log(props.contentOutputTargetRef.current.value);
       let content = String(props.contentOutputTargetHoldDataRef);
       console.log(content);
       const commands = getUsefulCommands(content);
@@ -49,41 +55,41 @@ const FileOutPutButtonNPC = (props) => {
       props.contentOutputTargetRef.current.value = NBTdata;
       props.setDataConvertedStateHolder(NBTdata);
       props.downloadFile();
-      buttonNPCRef.current.classList.add("green");
-      buttonNPCRef.current.classList.remove("red", "yellow");
-    }
+      buttonNPCRef.current.classList.add("greenB");
+      buttonNPCRef.current.classList.remove("redB", "yellowB");
 
-    function getUsefulCommands(content) {
-      return content
-        .split("\n")
-        .map((x) => x.replace(/^\//, "").trim())
-        .filter((x) => {
-          return x.search(CommandList) === 0;
-        });
-    }
+      function getUsefulCommands(content) {
+        return content
+          .split("\n")
+          .map((x) => x.replace(/^\//, "").trim())
+          .filter((x) => {
+            return x.search(CommandList) === 0;
+          });
+      }
 
-    function getBlockOpener(nbt_name) {
-      return `{Block:{name:"minecraft:moving_block",states:{},version:17959425},Count:1b,Damage:0s,Name:"minecraft:moving_block",WasPickedUp:0b,tag:{display:{Lore:["Â§lÂ§bBuild By: Â§d${NameBuilder}î„€","Â§3NBT Tool By: Â§aBrutus314 ","Â§aand Clawsky123î„","Â§9Conversion Tool By: ","Â§eExgioan!!î„‚","Â§fSpecial Thanks To:","Â§6Chronicles765!!    î„ƒ","Â§4Warning: Â§cDont Hold Too","Â§cMany Or You Will Lag!!Â§âˆ†"],Name:"Â§lÂ§d${NameBuilder} Builds: Â§gÂ§l${nbt_name}"},ench:[{id:28s,lvl:1s}],movingBlock:{name:"minecraft:sea_lantern",states:{},version:17879555},movingEntity:{Occupants:[`;
-    }
+      function getBlockOpener(nbt_name) {
+        return `{Block:{name:"minecraft:moving_block",states:{},version:17959425},Count:1b,Damage:0s,Name:"minecraft:moving_block",WasPickedUp:0b,tag:{display:{Lore:["Â§lÂ§bBuild By: Â§d${NameBuilder}î„€","Â§3NBT Tool By: Â§aBrutus314 ","Â§aand Clawsky123î„","Â§9Conversion Tool By: ","Â§eExgioan!!î„‚","Â§fSpecial Thanks To:","Â§6Chronicles765!!    î„ƒ","Â§4Warning: Â§cDont Hold Too","Â§cMany Or You Will Lag!!Â§âˆ†"],Name:"Â§lÂ§d${NameBuilder} Builds: Â§gÂ§l${nbt_name}"},ench:[{id:28s,lvl:1s}],movingBlock:{name:"minecraft:sea_lantern",states:{},version:17879555},movingEntity:{Occupants:[`;
+      }
 
-    function getBlockCloser() {
-      return '],id:"Beehive"}}}';
-    }
+      function getBlockCloser() {
+        return '],id:"Beehive"}}}';
+      }
 
-    function getNPCOpener(section, nbt_name) {
-      return `{ActorIdentifier:"minecraft:npc<>",SaveData:{Actions:"[{"button_name" : "Build Part: ${section}","data" : [`;
-    }
+      function getNPCOpener(section, nbt_name) {
+        return `{ActorIdentifier:"minecraft:npc<>",SaveData:{Actions:"[{"button_name" : "Build Part: ${section}","data" : [`;
+      }
 
-    function getNPCCloser(section, nbt_name) {
-      return `],"mode" : 0,"text" : "","type" : 1}]",CustomName:"Â§lÂ§d${NameBuilder} Builds: ${nbt_name}",CustomNameVisible:1b,InterativeText:"Â§cBuild By: Â§d${NameBuilder}!!î„€\nÂ§cNBT Tool By: Â§dBrutus314 an Clawsky123!!\nÂ§cConversion Tool By: Â§dExgioan!!\nÂ§cSpecial Thanks To: Â§dChronicles765!!! î„ƒ\nÂ§6Thanks For Trying My ${nbt_name} Build!!!",Persistent:1b,Pos:[],RawtextName:"Â§lÂ§d${NameBuilder} Builds: ${nbt_name}",Tags:["${nbt_name}${section}"],Variant:3,definitions:["+minecraft:npc"],identifier:"minecraft:npc"},TicksLeftToStay:0}`;
+      function getNPCCloser(section, nbt_name) {
+        return `],"mode" : 0,"text" : "","type" : 1}]",CustomName:"Â§lÂ§d${NameBuilder} Builds: ${nbt_name}",CustomNameVisible:1b,InterativeText:"Â§cBuild By: Â§d${NameBuilder}!!î„€\nÂ§cNBT Tool By: Â§dBrutus314 an Clawsky123!!\nÂ§cConversion Tool By: Â§dExgioan!!\nÂ§cSpecial Thanks To: Â§dChronicles765!!! î„ƒ\nÂ§6Thanks For Trying My ${nbt_name} Build!!!",Persistent:1b,Pos:[],RawtextName:"Â§lÂ§d${NameBuilder} Builds: ${nbt_name}",Tags:["${nbt_name}${section}"],Variant:3,definitions:["+minecraft:npc"],identifier:"minecraft:npc"},TicksLeftToStay:0}`;
+      }
+    }
+    function commandToNBT(command) {
+      return JSON.stringify({
+        cmd_line: command,
+        cmd_ver: 12,
+      });
     }
   };
-  function commandToNBT(command) {
-    return JSON.stringify({
-      cmd_line: command,
-      cmd_ver: 12,
-    });
-  }
   return (
     <label
       onClick={FileOutputNPCLogic}

@@ -1,3 +1,16 @@
+@mixin ButtonStyles {
+    background-color: #282b30;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    transition: background-color 1s;
+  }
+
+@mixin ButtonHoverStyles {
+    background-color: lightgrey;
+    color: black;
+}
+
 .errorContentIdsFoundUnconverted {
     position: fixed;
     width: 500px;
@@ -12,6 +25,7 @@
         position: relative;
         text-align: center;
         @include Maxsize100;
+        @include FlexColumnCenter;
 
         .closeWindowButton {
             cursor: pointer;
@@ -24,10 +38,38 @@
             color: black;
             font-weight: 900;
             outline: solid 2px black;
+            transition: background-color 1s;
         }
+
         button:hover {
             background-color: darkgrey;
             color: white;
+            cursor: pointer;
+        }
+
+        .buttonContainerFlexColumn {
+            width: 75%;
+
+            button {
+                @include ButtonStyles;
+                border: none;
+                margin-top: 20px;
+            }
+
+            a {
+                @include ButtonStyles;
+                display: flex;
+                justify-content: center;
+                text-align: center;
+                text-decoration: none;
+            }
+
+            button:hover {
+                @include ButtonHoverStyles;
+            }
+            a:hover {
+                @include ButtonHoverStyles;
+            }
         }
     }
 }

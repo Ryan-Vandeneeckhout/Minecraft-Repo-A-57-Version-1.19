@@ -125,16 +125,15 @@ const MainFileComponent = (props) => {
               the list of IDs and would appreciate a notice regarding the IDs
               that remain unconverted in a DM on discord.
             </p>
-            <a ref={IdDownloadRef} href="download">
-              Download List of Unconverted IDs and Fix Manually.
-            </a>
-            <button onClick={ForceReplacementOfFailedIDs}>
-              Remove IDs and Continue:{" "}
-              <span>
-                *Warning Removal of IDs can change the face of Directionial
-                Blocks
-              </span>
-            </button>
+            <div className="buttonContainerFlexColumn">
+              <a ref={IdDownloadRef} href="download">
+                Download and Fix Manually.
+              </a>
+              <button onClick={ForceReplacementOfFailedIDs}>
+                Remove IDs and Continue:{" "}
+              </button>
+            </div>
+
             <button className="closeWindowButton" onClick={closeWindowFunction}>
               X
             </button>

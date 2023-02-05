@@ -29,6 +29,7 @@
         text-transform: capitalize;
         font-weight: 600;
         letter-spacing: 1px;
+        transition: background-color 0.5s;
 
         svg {
           margin-right: 10px;
@@ -48,6 +49,7 @@
         text-transform: capitalize;
         background-color: transparent;
         color: white;
+        transition: background-color 0.5s;
       }
       input:hover {
         background-color: rgb(171, 168, 168);
@@ -59,6 +61,7 @@
         color: white;
         outline: none;
         text-decoration: none;
+        transition: background-color 0.5s, color 0.5s;
 
         svg {
           margin-right: 5px;
