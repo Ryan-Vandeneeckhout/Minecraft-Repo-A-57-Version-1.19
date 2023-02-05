@@ -89,12 +89,17 @@
         display: none;
         background-color: #424549;
         border: none;
+        justify-content: center;
         margin-top: 20px;
         max-width: 200px;
         margin-bottom: 20px;
+        text-align: center;
     }
     button:hover {
         @include ButtonHoverStyles;
+        background-color: goldenrod;
+        cursor: pointer;
+
     }
     .downloadCompletedFile:hover {
         @include ButtonHoverStyles;

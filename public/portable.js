@@ -1,8 +1,7 @@
 onmessage = async function (e) {
   let options = e.data;
   tempstructure = options.structure;
-  let result =
-    "#There was an error converting your structure file. Please read the logs and contact ReBrainerTV on discord.";
+  let result = "ERROR: Conversion Failed";
   try {
     result = await structureToFunction(
       options.tiles,
@@ -12,8 +11,7 @@ onmessage = async function (e) {
   } catch (err) {
     postMessage({
       type: "progress",
-      message:
-        "ERROR: An error has occured in conversion. Please send a screenshot of the following message along with your structure file to ReBrainerTV on the MCBE Essentials discord server (link in sidebar).",
+      message: "ERROR: Something went wrong.",
     });
     postMessage({ type: "progress", message: "ERROR: " + err });
   }
