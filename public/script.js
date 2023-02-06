@@ -50,7 +50,6 @@ function parseImportedData(file) {
       structure = data.parsed;
       unparsedStructure = data.metadata.buffer;
       //console.log(data);
-
       document.getElementById("upload").style.display = "none";
     });
   }

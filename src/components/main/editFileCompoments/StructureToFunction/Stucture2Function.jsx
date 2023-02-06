@@ -7,6 +7,9 @@ const Stucture2Function = () => {
 
   return (
     <section className="structure2FunctionSection">
+      <script src="./pnbt.js"></script>
+      <script src="./script.js"></script>
+      <script src="../js/datahandler.js"></script>
       <div className="structure2FunctionWrapper">
         <h2>Structure To Function Convertor</h2>
         <textarea
@@ -15,11 +18,17 @@ const Stucture2Function = () => {
           id="output-logs"
         />
         <div className="buttonsContainer">
-          <button ref={DownloadButtonRef} id="download-btn">
+          <button
+            ref={DownloadButtonRef}
+            onClick={window["download"]}
+            id="download-btn"
+          >
             Convert File
           </button>
           <div className="uploadButtonSTF" id="upload">
-            <label htmlFor="dataFileInput">Upload</label>
+            <label htmlFor="dataFileInput" onClick={window["handleSomeDiv"]}>
+              Upload
+            </label>
             <input
               id="dataFileInput"
               type="file"
