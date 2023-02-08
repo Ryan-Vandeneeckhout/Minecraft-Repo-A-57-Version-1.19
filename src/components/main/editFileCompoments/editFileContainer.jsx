@@ -176,7 +176,7 @@ const EditFileContainer = (props) => {
               />
               <DownloadFileInput
                 downloadFileRef={downloadFileNPCCodeRef}
-                downloadText={"Download NPC Horizon Conversion"}
+                downloadText={"Download NPC Horion Conversion"}
               />{" "}
               <FileOutPutButtonNPC
                 FileName={props.filename}
