@@ -10,7 +10,7 @@ const FileOutPutButtonNPC = (props) => {
       return (
         <>
           <FontAwesomeIcon className="fontAweIcon" icon="fa-exchange" />
-          Convert File to Horizon NPC
+          Convert File to Horion NPC
         </>
       );
     } else {
