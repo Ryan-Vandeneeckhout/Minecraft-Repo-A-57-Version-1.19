@@ -21,7 +21,7 @@ const EditFileContainer = (props) => {
     });
     const fileUrl = URL.createObjectURL(blob);
     downloadFileBedRockIDRef.current.classList.remove("blueB", "DisplayNone");
-    downloadFileBedRockIDRef.current.classList.add("greenB", "DisplayFlex");
+    downloadFileBedRockIDRef.current.classList.add("blueB", "DisplayFlex");
     downloadFileBedRockIDRef.current.setAttribute("href", fileUrl);
     if (props.filename.includes(".txt")) {
       downloadFileBedRockIDRef.current.setAttribute(
@@ -50,7 +50,7 @@ const EditFileContainer = (props) => {
     );
     const fileUrl = URL.createObjectURL(blob);
     downloadFileNPCCodeRef.current.classList.remove("blueB", "DisplayNone");
-    downloadFileNPCCodeRef.current.classList.add("greenB", "DisplayFlex");
+    downloadFileNPCCodeRef.current.classList.add("blueB", "DisplayFlex");
     downloadFileNPCCodeRef.current.setAttribute("href", fileUrl);
     if (props.filename.includes(".txt")) {
       downloadFileNPCCodeRef.current.setAttribute(
@@ -80,7 +80,7 @@ const EditFileContainer = (props) => {
     );
     const fileUrl = URL.createObjectURL(blob);
     downloadFileToolKitRef.current.classList.remove("blueB", "DisplayNone");
-    downloadFileToolKitRef.current.classList.add("greenB", "DisplayFlex");
+    downloadFileToolKitRef.current.classList.add("blueB", "DisplayFlex");
     downloadFileToolKitRef.current.setAttribute("href", fileUrl);
     if (props.filename.includes(".txt")) {
       downloadFileToolKitRef.current.setAttribute(
