@@ -11,6 +11,7 @@ import UploadFile from "./uploadFileComponents/uploadFile";
 const EditFileContainer = (props) => {
   const downloadFileBedRockIDRef = useRef(null);
   const downloadFileNPCCodeRef = useRef(null);
+  const downloadFileToolKitRef = useRef(null);
   const STFRef = useRef(null);
   const [valueInput, setValueInput] = useState(400);
 
@@ -66,6 +67,36 @@ const EditFileContainer = (props) => {
         "download",
         props.filename.replace(".mcfunction", "") +
           "Optimized NPC Build.mcfunction"
+      );
+    }
+  }
+
+  function downloadFileToolkit() {
+    const blob = new Blob(
+      [props.contentFileOutputConversionRef.current.value],
+      {
+        type: "plain/text",
+      }
+    );
+    const fileUrl = URL.createObjectURL(blob);
+    downloadFileToolKitRef.current.classList.remove("blueB", "DisplayNone");
+    downloadFileToolKitRef.current.classList.add("greenB", "DisplayFlex");
+    downloadFileToolKitRef.current.setAttribute("href", fileUrl);
+    if (props.filename.includes(".txt")) {
+      downloadFileToolKitRef.current.setAttribute(
+        "download",
+        props.filename.replace(".txt", "") + " Optimized NPC ToolKit Build.txt"
+      );
+    } else if (!props.filename.includes(".")) {
+      downloadFileToolKitRef.current.setAttribute(
+        "download",
+        props.filename + " Optimized NPC ToolKit Build.txt"
+      );
+    } else {
+      downloadFileToolKitRef.current.setAttribute(
+        "download",
+        props.filename.replace(".mcfunction", "") +
+          "Optimized NPC ToolKit Build.mcfunction"
       );
     }
   }
@@ -140,10 +171,27 @@ const EditFileContainer = (props) => {
                 valueInput={valueInput}
                 nameInput={props.nameInput}
                 setDataConvertedStateHolder={props.setDataConvertedStateHolder}
+                nbtVersionTool="horizon"
+                downloadFileToolKit={downloadFileToolkit}
               />
               <DownloadFileInput
                 downloadFileRef={downloadFileNPCCodeRef}
-                downloadText={"Download NPC Conversion"}
+                downloadText={"Download NPC Horizon Conversion"}
+              />{" "}
+              <FileOutPutButtonNPC
+                FileName={props.filename}
+                contentOutputTargetHoldDataRef={props.dataBedRockOriginal}
+                contentOutputTargetRef={props.contentFileOutputConversionRef}
+                downloadFile={downloadFileNPC}
+                valueInput={valueInput}
+                nameInput={props.nameInput}
+                setDataConvertedStateHolder={props.setDataConvertedStateHolder}
+                nbtVersionTool="toolkit"
+                downloadFileToolKit={downloadFileToolkit}
+              />
+              <DownloadFileInput
+                downloadFileRef={downloadFileToolKitRef}
+                downloadText={"Download NPC ToolKit Conversion"}
               />{" "}
             </>
           ) : null}
