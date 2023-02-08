@@ -17,7 +17,7 @@ const FileOutPutButtonNPC = (props) => {
       return (
         <>
           <FontAwesomeIcon className="fontAweIcon" icon="fa-exchange" />
-          Convert File to ToolKit NPC
+          Convert File to Toolbox NPC
         </>
       );
     }
