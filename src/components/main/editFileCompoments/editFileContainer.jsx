@@ -116,7 +116,7 @@ const EditFileContainer = (props) => {
   return (
     <section className="editFileContainerSection">
       <div className="wrapperEditFile">
-        <ul className="wrapperEditFileList">
+        <div className="wrapperEditFileList">
           <button
             ref={STFRef}
             className="StructureButton yellowB"
@@ -195,7 +195,7 @@ const EditFileContainer = (props) => {
               />{" "}
             </>
           ) : null}
-        </ul>
+        </div>
       </div>
     </section>
   );

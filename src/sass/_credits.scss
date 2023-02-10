@@ -4,7 +4,6 @@ footer {
   bottom: 0;
   color: white;
   display: flex;
-  height: 40px;
   outline: solid 1px grey;
   padding: 0 5%;
   position: fixed;
@@ -12,7 +11,7 @@ footer {
   z-index: 100;
 
   p {
-    font-size: clamp(0.5rem, 0.3784rem + 0.5405vw, 1rem);
+    font-size: clamp(0.75rem, 0.6893rem + 0.2699vw, 1rem);
     font-weight: 600;
     width: 100%;
     display: flex;
@@ -27,7 +26,7 @@ footer {
     }
 
     a {
-      font-size: clamp(0.5rem, 0.3784rem + 0.5405vw, 1rem);
+      font-size: clamp(0.75rem, 0.6893rem + 0.2699vw, 1rem);
       font-weight: 600;
       text-decoration: none;
       color: white;
