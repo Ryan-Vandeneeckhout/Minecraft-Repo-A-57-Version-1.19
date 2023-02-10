@@ -11,12 +11,16 @@ html{
   --devIconBackgroundColor: #212121;
   --displayFileEditorSectionColor: #282b30;
   --editorTextColor: white;
+  --loadingBarPercentComplete: #424549;
+  --loadingBarPercentRemaining: #7289da;
   --navButton: #1e2124;
   --navColor: #1e2124;
   --navTextColor: white;
   --mainMenuBackgroundColor: #1e2124;
   --sideMenucolor: #424549;
   --sideBarColor: #424549;
+  --textAreaBackgroundColor: #424549;
+  --textAreaColor: white;
   --greenText: green;
 }
 html[data-theme="black"] {
@@ -27,12 +31,16 @@ html[data-theme="black"] {
   --devIconBackgroundColor: #212121;
   --displayFileEditorSectionColor: #212121;
   --editorTextColor: white;
+  --loadingBarPercentComplete: #424549;
+  --loadingBarPercentRemaining: darkgreen;
   --navButton: #0a0a0a;
   --navColor: #0a0a0a;
   --navTextColor: white;
   --mainMenuBackgroundColor: black;
   --sideMenucolor: #212121;
   --sideBarColor: black;
+  --textAreaBackgroundColor: #424549;
+  --textAreaColor: white;
   --greenText: green;
 }
 html[data-theme="violet"] {
@@ -40,6 +48,8 @@ html[data-theme="violet"] {
   --displayFileEditorSectionColor: rgb(206, 162, 198);
   --devIconBackgroundColor: purple;
   --editorTextColor: white;
+  --loadingBarPercentComplete: rgb(60, 6, 69);
+  --loadingBarPercentRemaining: rgb(206, 162, 198);
   --labelBackgroundColor: transparent;
   --navButton: rgb(60, 6, 69);
   --navColor: white;
@@ -47,6 +57,8 @@ html[data-theme="violet"] {
   --mainMenuBackgroundColor: purple;
   --sideMenucolor: rgb(206, 162, 198);
   --sideBarColor: rgb(60, 6, 69);
+  --textAreaBackgroundColor: white;
+  --textAreaColor: black;
   --greenText: green;
 }
 html[data-theme="indigo"] {
@@ -54,6 +66,8 @@ html[data-theme="indigo"] {
   --displayFileEditorSectionColor: rgb(148, 85, 244);
   --devIconBackgroundColor: rgb(85, 20, 85);
   --editorTextColor: white;
+  --loadingBarPercentComplete: rgb(60, 6, 69);
+  --loadingBarPercentRemaining: rgb(206, 162, 198);
   --labelBackgroundColor: transparent;
   --navButton: rgb(74, 43, 122);
   --navColor: white;
@@ -61,6 +75,8 @@ html[data-theme="indigo"] {
   --mainMenuBackgroundColor: rgb(85, 20, 85);
   --sideMenucolor: rgb(148, 85, 244);
   --sideBarColor: rgb(85, 20, 85);
+  --textAreaBackgroundColor: white;
+  --textAreaColor: black;
   --greenText: green;
 }
 html[data-theme="blue"] {
@@ -69,12 +85,16 @@ html[data-theme="blue"] {
   --devIconBackgroundColor: rgb(8, 8, 125);
   --editorTextColor: white;
   --labelBackgroundColor: transparent;
+  --loadingBarPercentComplete: #006cbe;
+  --loadingBarPercentRemaining: green;
   --navButton: rgb(5, 5, 49);
   --navColor: white;
   --navTextColor: black;
   --mainMenuBackgroundColor: rgb(8, 8, 125);
   --sideMenucolor: #006cbe;
   --sideBarColor: rgb(8, 8, 125);
+  --textAreaBackgroundColor: white;
+  --textAreaColor: black;
   --greenText: green;
 }
 html[data-theme="green"] {
@@ -83,12 +103,16 @@ html[data-theme="green"] {
   --devIconBackgroundColor: rgb(39, 123, 39);
   --editorTextColor: white;
   --labelBackgroundColor: transparent;
+  --loadingBarPercentComplete: lightgreen;
+  --loadingBarPercentRemaining: rgb(17, 74, 17);
   --navButton: rgb(15, 39, 14);
   --navColor: white;
   --navTextColor: black;
   --mainMenuBackgroundColor: rgb(39, 123, 39);
   --sideMenucolor: rgb(15, 39, 14);
   --sideBarColor: rgb(39, 123, 39);
+  --textAreaBackgroundColor: white;
+  --textAreaColor: black;
   --greenText: rgb(15, 39, 14);
 }
 html[data-theme="orange"] {
@@ -97,12 +121,16 @@ html[data-theme="orange"] {
   --devIconBackgroundColor: rgb(255, 191, 72);
   --editorTextColor: white;
   --labelBackgroundColor: transparent;
+  --loadingBarPercentComplete: rgb(150, 63, 17);
+  --loadingBarPercentRemaining: green;
   --navButton: rgb(150, 63, 17);
   --navColor: white;
   --navTextColor: black;
   --mainMenuBackgroundColor: rgb(255, 191, 72);
   --sideMenucolor: orange;
   --sideBarColor: rgb(255, 191, 72);
+  --textAreaBackgroundColor: white;
+  --textAreaColor: black;
   --greenText: green;
   
 }
@@ -112,12 +140,16 @@ html[data-theme="red"] {
   --displayFileEditorSectionColor: rgb(128, 6, 20);
   --editorTextColor: white;
   --labelBackgroundColor: transparent;
+  --loadingBarPercentComplete: rgb(110, 5, 17);
+  --loadingBarPercentRemaining: green;
   --navButton: rgb(110, 5, 17);
   --navColor: white;
   --navTextColor: black;
   --mainMenuBackgroundColor: rgb(220, 16, 16);
   --sideMenucolor: rgb(95, 8, 8);
   --sideBarColor: rgb(220, 16, 16);
+  --textAreaBackgroundColor: white;
+  --textAreaColor: black;
   --greenText: green;
 }
 html[data-theme="rainbow"] {
@@ -126,10 +158,14 @@ html[data-theme="rainbow"] {
   --displayFileEditorSectionColor: #e7e746;
   --editorTextColor: white;
   --labelBackgroundColor: transparent;
+  --loadingBarPercentComplete: purple;
+  --loadingBarPercentRemaining: green;
   --navButton: darkgreen;
   --navColor: white;
   --navTextColor: black;
   --mainMenuBackgroundColor: rgb(128, 6, 20);
   --sideBarColor: rgb(8, 8, 125);
+  --textAreaBackgroundColor: white;
+  --textAreaColor: black;
   --greenText: green;
 }

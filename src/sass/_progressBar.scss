@@ -13,21 +13,13 @@
     width: 12.5%;
   }
 
-  .grey {
-    background-color: white;
-  }
-
   .greyBar {
     height: 40px;
-    background-color: #424549;
+    background-color: var(--loadingBarPercentComplete);
     flex: 1 0 auto; 
   }
   .greenBar {
     height: 40px;
-    background-color: #7289da;
+    background-color: var(--loadingBarPercentRemaining);
   }
-}
-
-.green {
-  background-color: #3dcc79;
 }
