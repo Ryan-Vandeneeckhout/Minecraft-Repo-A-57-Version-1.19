@@ -91,3 +91,13 @@
     }
   }
 }
+@media only screen and (max-width: 800px) {
+ 
+.editFileContainerSection .wrapperEditFile ul input, .editFileContainerSection .wrapperEditFile ul label, .editFileContainerSection .wrapperEditFile ul button  {
+    height: 50px;
+    font-size: 9px;
+  }
+  main .wrapperMainContent .displayFileEditorSection .displayFileEditorWrapper .upperSiteContent {
+    flex-direction: column;
+  }
+}

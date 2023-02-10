@@ -17,18 +17,22 @@ footer {
     width: 100%;
     display: flex;
     justify-content: center;
+
     span:nth-child(1) {
       margin-left: auto;
     }
+
     span:nth-child(2) {
       margin-left: auto;
     }
+
     a {
       font-size: clamp(0.5rem, 0.3784rem + 0.5405vw, 1rem);
       font-weight: 600;
       text-decoration: none;
       color: white;
     }
+
     a:hover {
       color: goldenrod;
     }
@@ -41,4 +45,20 @@ footer {
 
 .displayFlex {
   display: flex;
+}
+
+@media only screen and (max-width: 1200px) {
+  footer {
+    p {
+      text-align: center;
+
+      a {
+        font-weight: 900;
+
+      }
+      span:nth-child(2) {
+      font-weight: 900;  
+      }
+    }
+  }
 }

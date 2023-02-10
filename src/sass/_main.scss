@@ -35,6 +35,7 @@ main {
         text-align: center;
         width: 100%;
       }
+
       button:hover {
         background-color: slategray;
         cursor: pointer;
@@ -49,10 +50,12 @@ main {
           border: none;
           height: 60px;
           outline: solid black 1px;
+
           svg {
             margin-left: 15px;
           }
         }
+
         button:hover {
           cursor: pointer;
         }
@@ -69,12 +72,15 @@ main {
       width: 100%;
       outline: solid darkgray 1px;
       overflow: hidden;
+
       .orderEditorOne {
         order: 1;
       }
+
       .orderEditorTwo {
         order: 2;
       }
+
       .displayFileEditorWrapper {
         @include Maxsize100;
         padding: 5%;
@@ -89,6 +95,7 @@ main {
             font-weight: 800;
             letter-spacing: 1px;
           }
+
           input {
             padding: 5px;
             border-radius: 10px;
@@ -114,6 +121,7 @@ main {
         }
       }
     }
+
     .mainBackgroundSection {
       flex-grow: 1;
       color: white;
@@ -147,10 +155,12 @@ main {
           height: 60px;
           width: 60px;
         }
+
         button:hover {
           cursor: pointer;
         }
       }
+
       .mainBackgroundWrapper {
         @include FlexColumnCenter;
         @include Maxsize100;
@@ -160,6 +170,7 @@ main {
     }
   }
 }
+
 .overlay {
   background-color: transparent;
   position: fixed;
@@ -169,6 +180,7 @@ main {
   right: 0;
   z-index: 98;
 }
+
 .colorInput {
   @include FlexColumn;
 
@@ -176,15 +188,16 @@ main {
     margin-bottom: 10px;
   }
 }
-@media only screen and (max-width: 800px) {
+
+@media only screen and (max-width: 1200px) {
   .App {
-overflow-x: hidden;
-    height: 200vh;
+    overflow-x: hidden;
 
   }
+
   main {
     .wrapperMainContent {
-      @include FlexColumn;
+      display: flex;
 
       .mainContentMediaHolder {
         width: 100%;
@@ -194,8 +207,17 @@ overflow-x: hidden;
         width: 75%;
         max-width: 75%;
       }
+
       .editFileContainerSection {
         width: 25%;
+      }
+
+      .mainBackgroundSection {
+        display: none;
+      }
+
+      textarea {
+        min-height: 50%;
       }
     }
   }
