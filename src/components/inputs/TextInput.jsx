@@ -1,4 +1,5 @@
 const TextInput = (props) => {
+  //Used For File Name, Build Name and Creator Name inputs//
   const handleUserInput = (e) => {
     props.setNameInput(`${e.target.value}`);
   };

@@ -42,7 +42,7 @@ function App() {
     }
     return;
   };
-
+  //Check once for the presence of a selected theme from the local saved broswer data//
   useEffect(() => {
     const onPageLoad = () => {
       const RefListv = [NavBarRef.current, CreditsRef.current];

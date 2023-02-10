@@ -2,6 +2,7 @@ import TextInput from "../../inputs/TextInput";
 import EditorTextAreaContainer from "./textareaComponents/EditorTextAreaContainer";
 
 const DisplayEditerComponents = (props) => {
+  // Component Container for the Editor Section of the MPC Project//
   return (
     <section className="displayFileEditorSection">
       <div className="displayFileEditorWrapper">

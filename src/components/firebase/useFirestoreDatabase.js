@@ -3,6 +3,7 @@ import { db } from "./config";
 import { collection, onSnapshot, query, where } from "firebase/firestore";
 
 export const useCollection = (c, _q) => {
+  // Connect and query FireStore collections for Project MNPC//
 
   const [databaseFirestore, setDatabaseFirestore] = useState(null);
   const q = useRef(_q).current;

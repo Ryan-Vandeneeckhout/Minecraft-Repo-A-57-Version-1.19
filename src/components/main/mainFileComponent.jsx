@@ -32,6 +32,8 @@ const MainFileComponent = (props) => {
     setCloseWindow(!closeWindow);
   };
 
+  //Error IDs Prompt for the Local User to download and Fix within their own files
+
   function downloadFileFailedIDs() {
     const blob = new Blob(
       [
@@ -48,6 +50,8 @@ const MainFileComponent = (props) => {
     IdDownloadRef.current.setAttribute("download", "FailedIds.txt");
   }
 
+  // Function to auto overide failed ids and allow the user to proceed to the next step without the manual rewrite//
+
   const ForceReplacementOfFailedIDs = () => {
     const rx = /\[([^\][]*)]/g;
 
@@ -61,12 +65,10 @@ const MainFileComponent = (props) => {
         matchID.forEach((x) => {
           let D = x.toString().replaceAll("\\", "");
           cleanData = cleanData.replaceAll(D, "");
-          console.log(D);
         });
 
         setDataBedRockOriginal(cleanData);
         contentFileOutputConversionRef.current.value = cleanData;
-        console.log(cleanData);
       }
     });
   };

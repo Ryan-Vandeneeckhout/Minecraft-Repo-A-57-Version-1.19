@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 const DataIdStringInput = (props) => {
+  // Legacy code may be reimplenmented in a a future update regarding the creation of custom strings from the user's local machine//
   const [dataID, setDataID] = useState(null);
 
   const LocalMachineData = (e) => {

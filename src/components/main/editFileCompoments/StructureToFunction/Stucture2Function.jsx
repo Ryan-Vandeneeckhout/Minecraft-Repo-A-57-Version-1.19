@@ -5,6 +5,8 @@ import CheckboxFunction from "./checkboxFunction";
 const Stucture2Function = () => {
   const DownloadButtonRef = useRef(null);
 
+  //STF Creation and import of Global Scripts - These Scripts are legacy and may need to be updated for new broswers //
+
   return (
     <section className="structure2FunctionSection">
       <script src="./pnbt.js"></script>

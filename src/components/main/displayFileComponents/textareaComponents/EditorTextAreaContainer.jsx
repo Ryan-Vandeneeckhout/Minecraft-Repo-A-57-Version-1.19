@@ -1,6 +1,7 @@
 import EditorTextArea from "./EditorTextArea";
 
 const EditorTextAreaContainer = (props) => {
+  //Used in the Display Editor Component, for Input and Output File //
   return (
     <div className="textAreaContainer">
       <h3>{props.TextAreaTitle}</h3>

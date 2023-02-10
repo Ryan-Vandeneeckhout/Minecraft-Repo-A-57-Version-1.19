@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const DownloadFileInput = (props) => {
+  // Reuseable Download File button used for NPC Horion, STF and Toolbox Creations//
   return (
     <>
       <a

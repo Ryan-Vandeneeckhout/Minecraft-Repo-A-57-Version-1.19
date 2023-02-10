@@ -15,6 +15,8 @@ const EditFileContainer = (props) => {
   const STFRef = useRef(null);
   const [valueInput, setValueInput] = useState(400);
 
+  // Download File BediRock Converison Function //
+
   function downloadFile() {
     const blob = new Blob([props.dataConvertedStateHolderRef.current], {
       type: "plain/text",
@@ -40,6 +42,7 @@ const EditFileContainer = (props) => {
       );
     }
   }
+  //Download File NPC Horion Function//
 
   function downloadFileNPC() {
     const blob = new Blob(
@@ -71,6 +74,8 @@ const EditFileContainer = (props) => {
     }
   }
 
+  //Download File ToolBox Function //
+
   function downloadFileToolkit() {
     const blob = new Blob(
       [props.contentFileOutputConversionRef.current.value],
@@ -100,6 +105,8 @@ const EditFileContainer = (props) => {
       );
     }
   }
+
+  //Button to Switch whether STF is shown on page or hidden//
 
   const Structure2FunctionSwitch = () => {
     props.setStructure2F((prevCheck) => !prevCheck);

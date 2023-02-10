@@ -1,4 +1,5 @@
 const ProgressBarWidth = (props) => {
+  // Loading bar for the main menu and NPC conversions//
   return (
     <div className="progressBarContainer">
       <div className="Bar">

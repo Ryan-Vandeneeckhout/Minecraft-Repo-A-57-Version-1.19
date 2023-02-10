@@ -1,6 +1,8 @@
 import useState from "react-usestateref";
 
 const ColorInput = (props) => {
+  // Very messy, may need more code refactoring in a future update //
+  //Color Input used in the project's Theme Menu for custom themes //
   const [colorShow, setColorShow, colorShowRef] = useState(`#ff0000`);
   const handleUserInput = (e) => {
     props.StateRef.current.style.backgroundColor = `${e.target.value}`;

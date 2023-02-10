@@ -1,4 +1,5 @@
 const Credits = () => {
+  //Credit section for all project creators and special attributions //
   return (
     <p>
       <span>

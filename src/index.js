@@ -34,7 +34,7 @@ import {
   faAngleRight,
   faAngleLeft,
 } from "@fortawesome/free-solid-svg-icons";
-
+// FontAwesome Global Icons Added
 library.add(
   fab,
   faBars,

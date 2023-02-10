@@ -1,7 +1,7 @@
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 import { getAuth } from "firebase/auth";
-//Firestore Config File for Project Endless
+//Firestore Config File for Project Minecraft NPC get Admin data//
 const firebaseConfig = {
   apiKey: "AIzaSyD48d2iis9NGn4yfWv_iDEbaxbhec8PGn0",
   authDomain: "minecraft-firestore.firebaseapp.com",

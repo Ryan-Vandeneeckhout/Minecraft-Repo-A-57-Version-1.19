@@ -14,6 +14,8 @@ const LoginPage = () => {
     e.preventDefault();
   };
 
+  // Login Page for the Adminstator accessabile from the devmenu//
+
   return (
     <section className="loginSignupSection">
       <div className="adminLoginMenuWrapper">

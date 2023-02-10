@@ -5,6 +5,7 @@ import EditFileContainer from "./editFileCompoments/editFileContainer";
 import Stucture2Function from "./editFileCompoments/StructureToFunction/Stucture2Function";
 
 const DisplayEditComponentsContainer = (props) => {
+  // Components Wrapped togethor with variables needed in both Editor Component and Display Files Component//
   const contentFileUploadedPreviewRef = useRef(null);
 
   const [filename, setFileName] = useState("No File Specified");

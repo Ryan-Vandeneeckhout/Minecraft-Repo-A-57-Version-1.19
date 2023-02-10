@@ -1,4 +1,5 @@
 export default function NPCInput(props) {
+  // Number Handler for the number of commands per NPC is adjustable due to the fickle nature of every increasing and large builds.//
   const handleUserInput = (e) => {
     props.setValueInput(`${e.target.value}`);
   };

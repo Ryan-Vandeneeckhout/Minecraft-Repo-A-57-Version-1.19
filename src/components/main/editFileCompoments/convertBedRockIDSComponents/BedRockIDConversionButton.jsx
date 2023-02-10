@@ -34,26 +34,32 @@ const BedRockIDConversionButton = (props) => {
         (undefined || null) ||
       props.contentFileUploadedPreviewRef.current.value === ""
     ) {
+      //Content was found to be empty or null - open prompt menu
       BedRockIDConversionButtonRef.current.classList.add("redB");
       BedRockIDConversionButtonRef.current.classList.remove("yellowB");
       setErrorPrompt(true);
     } else {
+      //content converison start //
       BedRockIDConversionButtonRef.current.classList.add("yellowB");
       BedRockIDConversionButtonRef.current.classList.remove("greenB", "redB");
 
       let str = props.contentFileUploadedPreviewRef.current.value;
 
+      //Compatible with auto replace for Rebrainer's STF from his site//
+
       if (str.includes("ReBrainer")) {
         str = str.replaceAll(/#.*?\)/g, "");
         for (let i = 0; i < 3; i++) str = str.substring(str.indexOf("\n") + 1);
       }
+      //Dirty commands removal
       str = str.replaceAll(/execute.*? 0/g, "");
       str = str.replaceAll("execute", "");
       str = str.replaceAll(" 0", "");
       str = str.replaceAll(/(^[ \t]*\n)/gm, "");
       Object.keys(IndexKeyMineCraftNPC).forEach((key) => {
+        //Most import function for the bedrock update and replace object//
         str = str.replaceAll(key, IndexKeyMineCraftNPC[key]);
-
+        //For each update loading bar with a tick to completion//
         props.setGreenWidth(
           Math.ceil(
             100 *
@@ -62,13 +68,18 @@ const BedRockIDConversionButton = (props) => {
           )
         );
       });
+      //Mission complete//
 
       BedRockIDConversionButtonRef.current.classList.add("greenB");
       BedRockIDConversionButtonRef.current.classList.remove("redB", "yellowB");
       props.contentFileOutputConversionRef.current.value = str;
+      //mutable string object
       props.setDataBedRockOriginal(str);
+      //Hold a copy of the bedrock converted data for future use
       props.setDataConvertedStateHolder(str);
+      //set download file ready
       props.downloadFile();
+      //set data for user to ensure easier manual replacement of IDS
       props.setIDOutputBedRockFailedData(
         (str = str.replaceAll("]", "] <---Failed ID"))
       );
@@ -79,11 +90,15 @@ const BedRockIDConversionButton = (props) => {
       strs.forEach((x) => {
         if (x.match(rx) === null);
         else {
+          //Push matches to a new array and wait for firebase
           matches = [...x.match(rx)];
           setTagValue([...new Set(matches)]);
+
           if (databaseFirestore[0].IdCollection === (undefined || null)) {
+            //Firebase connection failed or arry is null
             return;
           } else {
+            //Upadate Firebase with new ids
             setIdValue(databaseFirestore[0].IdCollection);
             tagValueRef.current.forEach((i) => {
               if (!databaseFirestore[0].IdCollection.includes(i)) {
@@ -97,9 +112,11 @@ const BedRockIDConversionButton = (props) => {
       });
 
       if (matches === [] || matches === null || matches.length === 0) {
+        //Set loading bar to 100 percent if there are not error ids found!.
         props.setGreenWidth(100);
         props.setProgessStatus("Conversion Complete");
       } else {
+        //IDs failed to convert message prompt and download file for the Error Prompt
         let uniqueChars = [...new Set(matches)];
         setFailedIds([uniqueChars.toString().replaceAll("\\", "")]);
         props.setErrorContent(`${failedIdsRef.current}`);

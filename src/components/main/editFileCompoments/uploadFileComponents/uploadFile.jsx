@@ -7,6 +7,8 @@ const UploadFile = (props) => {
   const inputButton = useRef(null);
   const [errorPrompt, setErrorPrompt] = useState(false);
 
+  //Upload File for everything other then STF which holds its own upload button//
+
   function getFile() {
     if (inputFileRef.current === null) {
       setErrorPrompt(true);
