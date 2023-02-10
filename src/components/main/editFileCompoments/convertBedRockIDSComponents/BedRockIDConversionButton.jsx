@@ -6,6 +6,7 @@ import { useCollection } from "../../../firebase/useFirestoreDatabase.js";
 
 import { IndexKeyMineCraftNPC } from "./IndexKeyMinecraftNPC";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PromptError from "../../../overlays/promptError.jsx";
 
 const BedRockIDConversionButton = (props) => {
   const BedRockIDConversionButtonRef = useRef(null);
@@ -13,6 +14,8 @@ const BedRockIDConversionButton = (props) => {
   const [, setFailedIds, failedIdsRef] = useState("");
   const [, setTagValue, tagValueRef] = useState([]);
   const [, setIdValue, IdValueRef] = useState([]);
+
+  const [errorPrompt, setErrorPrompt] = useState(false);
 
   const FireBaseIDs = async () => {
     //Add ID Failed to Firestore
@@ -33,8 +36,8 @@ const BedRockIDConversionButton = (props) => {
     ) {
       BedRockIDConversionButtonRef.current.classList.add("redB");
       BedRockIDConversionButtonRef.current.classList.remove("yellowB");
+      setErrorPrompt(true);
     } else {
-      console.log(props.contentFileUploadedPreviewRef.current);
       BedRockIDConversionButtonRef.current.classList.add("yellowB");
       BedRockIDConversionButtonRef.current.classList.remove("greenB", "redB");
 
@@ -113,14 +116,22 @@ const BedRockIDConversionButton = (props) => {
   };
 
   return (
-    <label
-      ref={BedRockIDConversionButtonRef}
-      className="buttonOne yellowB hoverYes"
-      onClick={FileTest}
-    >
-      <FontAwesomeIcon className="fontAweIcon" icon="fa-exchange" />
-      Bedrock ID Conversion:
-    </label>
+    <>
+      <label
+        ref={BedRockIDConversionButtonRef}
+        className="buttonOne yellowB hoverYes"
+        onClick={FileTest}
+      >
+        <FontAwesomeIcon className="fontAweIcon" icon="fa-exchange" />
+        Bedrock ID Conversion:
+      </label>
+      {errorPrompt ? (
+        <PromptError
+          titleTextError="Error: Bedrock ID Conversion Output"
+          errorText="Warning, it appears that something went wrong with the conversion of your file, please ensure that the input section is not empty."
+        />
+      ) : null}
+    </>
   );
 };
 export default BedRockIDConversionButton;

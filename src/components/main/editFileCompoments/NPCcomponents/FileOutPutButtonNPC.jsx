@@ -1,8 +1,10 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { CommandList } from "./CommandList";
+import PromptError from "../../../overlays/promptError";
 
 const FileOutPutButtonNPC = (props) => {
+  const [errorPrompt, setErrorPrompt] = useState(false);
   const buttonNPCRef = useRef(null);
 
   const ButtonToolKit = () => {
@@ -30,6 +32,7 @@ const FileOutPutButtonNPC = (props) => {
     ) {
       buttonNPCRef.current.classList.add("redB");
       buttonNPCRef.current.classList.remove("yellowB");
+      setErrorPrompt(true);
     } else {
       console.log(props.contentOutputTargetRef.current.value);
       let content = String(props.contentOutputTargetHoldDataRef);
@@ -162,13 +165,21 @@ const FileOutPutButtonNPC = (props) => {
     }
   };
   return (
-    <label
-      onClick={FileOutputNPCLogic}
-      ref={buttonNPCRef}
-      className="buttonOne hoverYes yellowB"
-    >
-      {ButtonToolKit()}
-    </label>
+    <>
+      <label
+        onClick={FileOutputNPCLogic}
+        ref={buttonNPCRef}
+        className="buttonOne hoverYes yellowB"
+      >
+        {ButtonToolKit()}
+      </label>
+      {errorPrompt ? (
+        <PromptError
+          titleTextError="Error: NPC Output"
+          errorText="Warning, it appears that something went wrong with the conversion of your file, please ensure that the input section has properly converted your Bedrock data and that it is not empty."
+        />
+      ) : null}
+    </>
   );
 };
 export default FileOutPutButtonNPC;

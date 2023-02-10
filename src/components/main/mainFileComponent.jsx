@@ -102,6 +102,7 @@ const MainFileComponent = (props) => {
           greyWidthRef={greyWidthRef}
           progressStatusRef={progressStatusRef}
           menuSetting={menuSetting}
+          setMenuSetting={setMenuSetting}
         />
         <SideMenu
           ResetTheme={props.ResetTheme}

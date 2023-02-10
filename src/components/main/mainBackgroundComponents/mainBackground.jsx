@@ -33,6 +33,7 @@ const MainBackground = (props) => {
           sideMenuRef={props.sideMenuRef}
           CreditsRef={props.CreditsRef}
           DevMenuRef={props.DevMenuRef}
+          setMenuSetting={props.setMenuSetting}
         />
       );
     } else {

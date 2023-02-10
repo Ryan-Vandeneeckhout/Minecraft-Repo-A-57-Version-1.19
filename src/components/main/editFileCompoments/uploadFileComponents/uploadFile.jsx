@@ -1,13 +1,16 @@
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import PromptError from "../../../overlays/promptError";
 
 const UploadFile = (props) => {
   const inputFileRef = useRef(null);
   const inputButton = useRef(null);
+  const [errorPrompt, setErrorPrompt] = useState(false);
 
   function getFile() {
-    if (inputFileRef.current === null);
-    else {
+    if (inputFileRef.current === null) {
+      setErrorPrompt(true);
+    } else {
       if (
         "files" in inputFileRef.current &&
         inputFileRef.current.files.length > 0
@@ -62,6 +65,12 @@ const UploadFile = (props) => {
         onChange={getFile}
         ref={inputFileRef}
       />
+      {errorPrompt ? (
+        <PromptError
+          titleTextError="File Not Found"
+          errorText="Warning, it appears that something went wrong with the upload of your file, please ensure that the file being uploaded is not empty and is a text file"
+        />
+      ) : null}
     </>
   );
 };
