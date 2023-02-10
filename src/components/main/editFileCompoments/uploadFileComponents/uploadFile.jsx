@@ -62,6 +62,7 @@ const UploadFile = (props) => {
         className="displayNone"
         type="file"
         id="files"
+        accept=".mcfunction,.txt"
         onChange={getFile}
         ref={inputFileRef}
       />

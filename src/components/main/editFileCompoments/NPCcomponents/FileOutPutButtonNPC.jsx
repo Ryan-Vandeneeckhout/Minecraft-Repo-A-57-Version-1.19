@@ -176,7 +176,7 @@ const FileOutPutButtonNPC = (props) => {
       {errorPrompt ? (
         <PromptError
           titleTextError="Error: NPC Output"
-          errorText="Warning, it appears that something went wrong with the conversion of your file, please ensure that the input section has properly converted your Bedrock data and that it is not empty."
+          errorText="Warning, it appears that something went wrong with the conversion of your file, please ensure that the input section has properly converted your Bedrock data and that the output editor is not empty."
         />
       ) : null}
     </>
